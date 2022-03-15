@@ -242,3 +242,5 @@
         about_us
         ```
     ```
+ 
+## 2. Simple Markdown 
