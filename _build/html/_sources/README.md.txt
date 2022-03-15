@@ -219,26 +219,3 @@
        about_us
 
     ```     
-
-12. Clean up
-
-    + Rename `index.rst`
-    
-    ```shell script
-    mv index.rst index.md
-    ```
-    
-    + convert the text to:
-    
-    ```markdown
-    # Schlockchain Homepage
-
-    Welcome to the future.
-
-        ```{toctree}
-        :maxdepth: 2
-        :caption: "Contents:"
-           
-        about_us
-        ```
-    ```

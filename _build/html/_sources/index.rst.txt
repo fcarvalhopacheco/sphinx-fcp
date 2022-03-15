@@ -7,6 +7,7 @@ Welcome to the future?.
    :maxdepth: 2
    :caption: Contents:
 
+   about_us
 
 Indices and tables
 ==================

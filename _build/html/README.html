@@ -1,0 +1,332 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sphinx and Markdown training &#8212; myfirst-sphinx  documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css" />
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="sphinx-and-markdown-training">
+<h1>Sphinx and Markdown training<a class="headerlink" href="#sphinx-and-markdown-training" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="https://training.talkpython.fm/courses/details/static-sites-with-sphinx-and-markdown">Reference: talkpython</a></p>
+<blockquote>
+<div><p>Static Website with Sphinx and Markdown
+I am using macOS Big Sur 11.6</p>
+</div></blockquote>
+<div class="section" id="setup">
+<h2>1. Setup<a class="headerlink" href="#setup" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p>Create a new project folder</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nv">$mkdir</span> /Users/fcp/workspace/1.git/sphinx-fcp
+<span class="nv">$cd</span>  /Users/fcp/workspace/1.git/sphinx-fcp
+</pre></div>
+</div>
+</li>
+<li><p>Create a python environment with <code class="docutils literal notranslate"><span class="pre">CONDA</span></code></p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nv">$conda</span> create --prefix ./.env python
+
+<span class="c1"># activate </span>
+<span class="nv">$conda</span> acvtivate .env/
+
+<span class="c1">#update pip</span>
+<span class="nv">$conda</span> update pip
+</pre></div>
+</div>
+</li>
+<li><p>Installing Sphinx</p>
+<ul class="simple">
+<li><p>See all Sphinx installations <a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/installation.html">HERE</a></p></li>
+</ul>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nv">$conda</span> install sphinx
+</pre></div>
+</div>
+</li>
+<li><p>Check Sphinx installation</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nv">$which</span> sphinx-quickstart
+</pre></div>
+</div>
+<blockquote>
+<div><p>For me: <code class="docutils literal notranslate"><span class="pre">/Users/fcp/workspace/1.git/sphinx-fcp/.env/bin/sphinx-quickstart</span></code></p>
+</div></blockquote>
+</li>
+<li><p>Make a Sphinx Site</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="c1"># On your project folder, `/Users/fcp/workspace/1.git/sphinx-fcp`, type:</span>
+
+<span class="nv">$sphinx</span>-quickstart
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Answer the following questions</p></li>
+</ul>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>&gt; Separate <span class="nb">source</span> and build directories <span class="o">(</span>y/n<span class="o">)</span> <span class="o">[</span>n<span class="o">]</span>: n
+
+The project name will occur <span class="k">in</span> several places <span class="k">in</span> the built documentation.
+&gt; Project name: myfirst-sphinx
+&gt; Author name<span class="o">(</span>s<span class="o">)</span>: Fernando Carvalho Pacheco &lt;fernando.pacheco@hawaii.edu&gt;
+&gt; Project release <span class="o">[]</span>:
+
+If the documents are to be written <span class="k">in</span> a language other than English,
+you can <span class="k">select</span> a language here by its language code. Sphinx will <span class="k">then</span>
+translate text that it generates into that language.
+
+For a list of supported codes, see
+https://www.sphinx-doc.org/en/master/usage/configuration.html#confval-language.
+&gt; Project language <span class="o">[</span>en<span class="o">]</span>:
+
+Creating file /Users/fcp/workspace/1.git/sphinx-fcp/conf.py.
+Creating file /Users/fcp/workspace/1.git/sphinx-fcp/index.rst.
+Creating file /Users/fcp/workspace/1.git/sphinx-fcp/Makefile.
+Creating file /Users/fcp/workspace/1.git/sphinx-fcp/make.bat.
+
+Finished: An initial directory structure has been created.
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>This is the new tree of the project</p></li>
+</ul>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nv">$tree</span>                                                              
+
+    ├── Makefile
+    ├── README.md
+    ├── _build          -&gt; An empty directory <span class="o">(</span><span class="k">for</span> now<span class="o">)</span> that will hold the rendered documentation.
+    ├── _static         -&gt; An empty directory <span class="o">(</span>custom site assets<span class="o">)</span>
+    ├── _templates      -&gt; An empty directory <span class="o">(</span>custom templates<span class="o">)</span>
+    ├── conf.py         -&gt; A Python script holding the configuration of the Sphinx project. It contains the 
+    ├                      project name and release you specified to sphinx-quickstart, as well as some extra 
+    ├                      configuration keys.
+    ├
+    ├── index.rst       -&gt; The root document of the project, which serves as welcome page and contains 
+    ├                     the root of the “table of contents tree” <span class="o">(</span>or toctree<span class="o">)</span>.
+    ├ 
+    └── make.bat        -&gt; Convenience scripts to simplify some common Sphinx operations, 
+                           such as rendering the content.
+</pre></div>
+</div>
+</li>
+<li><p>Livereload</p>
+<blockquote>
+<div><p>LiveReload monitors changes in the file system. As soon as you save a file, it is preprocessed as needed,
+and the browser is refreshed.</p>
+</div></blockquote>
+<ul class="simple">
+<li><p>Install livereload:</p></li>
+</ul>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nv">$conda</span> install -c conda-forge livereload    
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Create a python file to run livereload</p></li>
+</ul>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nv">$touch</span> run_livereload
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Edit <code class="docutils literal notranslate"><span class="pre">run_livereload.py</span></code> with the following:</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">livereload</span> <span class="kn">import</span> <span class="n">Server</span><span class="p">,</span> <span class="n">shell</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+<span class="n">server</span> <span class="o">=</span> <span class="n">Server</span><span class="p">()</span>
+<span class="n">server</span><span class="o">.</span><span class="n">watch</span><span class="p">(</span><span class="s1">&#39;*.rst&#39;</span><span class="p">,</span> <span class="n">shell</span><span class="p">(</span><span class="s1">&#39;make html&#39;</span><span class="p">),</span> <span class="n">delay</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">server</span><span class="o">.</span><span class="n">watch</span><span class="p">(</span><span class="s1">&#39;*.md&#39;</span><span class="p">,</span> <span class="n">shell</span><span class="p">(</span><span class="s1">&#39;make html&#39;</span><span class="p">),</span> <span class="n">delay</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">server</span><span class="o">.</span><span class="n">watch</span><span class="p">(</span><span class="s1">&#39;*.py&#39;</span><span class="p">,</span> <span class="n">shell</span><span class="p">(</span><span class="s1">&#39;make html&#39;</span><span class="p">),</span> <span class="n">delay</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">server</span><span class="o">.</span><span class="n">watch</span><span class="p">(</span><span class="s1">&#39;_static/*&#39;</span><span class="p">,</span> <span class="n">shell</span><span class="p">(</span><span class="s1">&#39;make html&#39;</span><span class="p">),</span> <span class="n">delay</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">server</span><span class="o">.</span><span class="n">watch</span><span class="p">(</span><span class="s1">&#39;_templates/*&#39;</span><span class="p">,</span> <span class="n">shell</span><span class="p">(</span><span class="s1">&#39;make html&#39;</span><span class="p">),</span> <span class="n">delay</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">server</span><span class="o">.</span><span class="n">serve</span><span class="p">(</span><span class="n">root</span><span class="o">=</span><span class="s1">&#39;_build/html&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+<li><p>Added <code class="docutils literal notranslate"><span class="pre">.env/</span></code> folder to <code class="docutils literal notranslate"><span class="pre">conf.py</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">exclude_patterns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;_build&#39;</span><span class="p">,</span> <span class="s1">&#39;Thumbs.db&#39;</span><span class="p">,</span> <span class="s1">&#39;.DS_Store&#39;</span><span class="p">,</span><span class="s1">&#39;.env&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</li>
+<li><p>Render the documentation as HTML for the first time</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nv">$sphinx</span>-build -b html ../sphinx-fcp _build/html  
+
+<span class="c1"># you should see</span>
+Running Sphinx v4.4.0
+making output directory... <span class="k">done</span>
+building <span class="o">[</span>mo<span class="o">]</span>: targets <span class="k">for</span> <span class="m">0</span> po files that are out of date
+building <span class="o">[</span>html<span class="o">]</span>: targets <span class="k">for</span> <span class="m">1</span> <span class="nb">source</span> files that are out of date
+updating environment: <span class="o">[</span>new config<span class="o">]</span> <span class="m">1</span> added, <span class="m">0</span> changed, <span class="m">0</span> removed
+reading sources... <span class="o">[</span><span class="m">100</span>%<span class="o">]</span> index                                                                                                                                                                                                            
+looking <span class="k">for</span> now-outdated files... none found
+pickling environment... <span class="k">done</span>
+checking consistency... <span class="k">done</span>
+preparing documents... <span class="k">done</span>
+writing output... <span class="o">[</span><span class="m">100</span>%<span class="o">]</span> index                                                                                                                                                                                                             
+generating indices... genindex <span class="k">done</span>
+writing additional pages... search <span class="k">done</span>
+copying static files... <span class="k">done</span>
+copying extra files... <span class="k">done</span>
+dumping search index <span class="k">in</span> English <span class="o">(</span>code: en<span class="o">)</span>... <span class="k">done</span>
+dumping object inventory... <span class="k">done</span>
+build succeeded.
+
+The HTML pages are <span class="k">in</span> _build/html.
+</pre></div>
+</div>
+</li>
+<li><p>Testing the installation</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ python ./run_livereload.py
+<span class="c1"># go to http://127.0.0.1:5500, and check the website </span>
+</pre></div>
+</div>
+</li>
+<li><p>Add Markdown</p>
+<ul>
+<li><p>Install MyST - Markedly Structured Text</p>
+<blockquote>
+<div><p>Allows you to write sphinx documentation entirely in markdown.</p>
+</div></blockquote>
+</li>
+</ul>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nv">$conda</span> install -c conda-forge myst-parser
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>open <code class="docutils literal notranslate"><span class="pre">conf.py</span></code>, and add the following:</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">extensions</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s2">&quot;myst_parser&quot;</span><span class="p">,</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+</li>
+<li><p>Testing the markdown file</p>
+<ul class="simple">
+<li><p>Create the following</p></li>
+</ul>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nv">$touch</span> about_us.md
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Add the following:</p></li>
+</ul>
+<div class="highlight-markdown notranslate"><div class="highlight"><pre><span></span><span class="gh"># This is us =)  </span>
+
+<span class="k">&gt; </span><span class="ge">Testing! </span>
+
+<span class="gu">### 1. Test</span>
+<span class="gu">### 1.1 Testing </span>
+
+<span class="k">1.</span> Test1
+<span class="k">2.</span> Test2
+
++ Test3 
+<span class="k">-</span> Test4
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>add <code class="docutils literal notranslate"><span class="pre">about_us.md</span></code> to <code class="docutils literal notranslate"><span class="pre">index.rst</span></code></p></li>
+</ul>
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="gh">TEST PAGE!</span>
+<span class="gh">=====================</span>
+
+Welcome to the future?.
+
+<span class="p">..</span> <span class="ow">toctree</span><span class="p">::</span>
+   <span class="nc">:maxdepth:</span> 2
+   <span class="nc">:caption:</span> Contents:
+
+   about_us
+</pre></div>
+</div>
+</li>
+</ol>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">myfirst-sphinx</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="about_us.html">This is us =)</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2022, Fernando Carvalho Pacheco <fernando.pacheco@hawaii.edu>.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 4.4.0</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/README.md.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
