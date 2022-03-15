@@ -81,12 +81,18 @@
 
         ├── Makefile
         ├── README.md
-        ├── _build
-        ├── _static
-        ├── _templates
-        ├── conf.py
-        ├── index.rst
-        └── make.bat
+        ├── _build          -> An empty directory (for now) that will hold the rendered documentation.
+        ├── _static         -> An empty directory (custom site assets)
+        ├── _templates      -> An empty directory (custom templates)
+        ├── conf.py         -> A Python script holding the configuration of the Sphinx project. It contains the 
+        ├                      project name and release you specified to sphinx-quickstart, as well as some extra 
+        ├                      configuration keys.
+        ├
+        ├── index.rst       -> The root document of the project, which serves as welcome page and contains 
+        ├                     the root of the “table of contents tree” (or toctree).
+        ├ 
+        └── make.bat        -> Convenience scripts to simplify some common Sphinx operations, 
+                               such as rendering the content.
     ```
 6. Livereload
     > LiveReload monitors changes in the file system. As soon as you save a file, it is preprocessed as needed, 
@@ -101,4 +107,51 @@
     ```shell script
     $touch run_livereload
     ```
-    + Edit `run_livereload.py`
+    + Edit `run_livereload.py` with the following:
+    
+    ```python
+    from livereload import Server, shell
+
+    if __name__ == '__main__':
+    server = Server()
+    server.watch('*.rst', shell('make html'), delay=1)
+    server.watch('*.md', shell('make html'), delay=1)
+    server.watch('*.py', shell('make html'), delay=1)
+    server.watch('_static/*', shell('make html'), delay=1)
+    server.watch('_templates/*', shell('make html'), delay=1)
+    server.serve(root='_build/html')
+    ```
+   
+7. Added `.env/` folder to `conf.py`.
+    
+    ```python
+    exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store','.env']
+    ```
+ 
+8. Render the documentation as HTML for the first time
+ 
+    ```shell script
+    $sphinx-build -b html ../sphinx-fcp _build/html  
+    
+    # you should see
+    Running Sphinx v4.4.0
+    making output directory... done
+    building [mo]: targets for 0 po files that are out of date
+    building [html]: targets for 1 source files that are out of date
+    updating environment: [new config] 1 added, 0 changed, 0 removed
+    reading sources... [100%] index                                                                                                                                                                                                            
+    looking for now-outdated files... none found
+    pickling environment... done
+    checking consistency... done
+    preparing documents... done
+    writing output... [100%] index                                                                                                                                                                                                             
+    generating indices... genindex done
+    writing additional pages... search done
+    copying static files... done
+    copying extra files... done
+    dumping search index in English (code: en)... done
+    dumping object inventory... done
+    build succeeded.
+
+    The HTML pages are in _build/html.
+    ```   
