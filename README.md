@@ -162,3 +162,27 @@
     $ python ./run_livereload.py
     # go to http://127.0.0.1:5500, and check the website 
     ```
+   
+10. Add Markdown
+
+    + Install MyST - Markedly Structured Text
+        >   Allows you to write sphinx documentation entirely in markdown.
+    
+    ```shell script
+    $conda install -c conda-forge myst-parser
+    ```
+    
+    + open `conf.py`, and add the following:
+    
+    ```python
+    extensions = [
+        "myst_parser",
+    ]
+    ```
+   
+11. Testing the markdown file
+
+    + Create the following
+    ```shell script
+    $touch about_us.md
+    ```
