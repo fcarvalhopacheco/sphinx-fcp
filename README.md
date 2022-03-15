@@ -1,6 +1,6 @@
 # Sphinx and Markdown training
 
-[Access here](https://training.talkpython.fm/courses/details/static-sites-with-sphinx-and-markdown)
+[Reference: talkpython](https://training.talkpython.fm/courses/details/static-sites-with-sphinx-and-markdown)
 
 > Static Website with Sphinx and Markdown
 > I am using macOS Big Sur 11.6
@@ -155,3 +155,10 @@
 
     The HTML pages are in _build/html.
     ```   
+   
+9. Testing the installation
+
+    ```shell script
+    $ python ./run_livereload.py
+    # go to http://127.0.0.1:5500, and check the website 
+    ```
