@@ -1,23 +1,27 @@
-# About Us
+# Markdown Images
 
 We are cooking, baby! 
 
-We are **bold** and *innovative*.
+We are **Testing** .
 
-+ Our `def cooking` function works really well:
++ Our `images` works really well:
     
-    ```python
-    def cooking(): return
+## Test-1
+
+`![HOT](https://datadocs.bco-dmo.org/d2/images/logos/logo_HOT.jpg)`
+
+![HOT](https://datadocs.bco-dmo.org/d2/images/logos/logo_HOT.jpg)
+
+## Test-2
+    
+```
+    ```{image} _build/html/_images/logo_HOT.jpg
+    :alt: HOT-2
+    :class: bg-primary
+    :width: 200px
+    :align: center
     ```
-    
-Investors say the best things about us:
-
-
-## Topic 1
-
-## Topic 2
-
-![HOT-2](_build/html/_images/logo_HOT.jpg)
+```
 
 ```{image} _build/html/_images/logo_HOT.jpg
 :alt: HOT-2
@@ -25,3 +29,24 @@ Investors say the best things about us:
 :width: 200px
 :align: center
 ```
+
+## Test-3
+
+```
+:::{figure-md} logo-target
+:class: myclass
+
+<img src="_build/html/_images/logo_HOT.jpg" alt="HOT-2" class="bg-primary" width="300px">
+
+Hawaii Ocean Time-Series *University of Hawaii*.
+:::
+```
+
+
+:::{figure-md} logo-target
+:class: myclass
+
+<img src="_build/html/_images/logo_HOT.jpg" alt="HOT-2" class="bg-primary" width="300px">
+
+Hawaii Ocean Time-Series *University of Hawaii*.
+:::

@@ -299,9 +299,7 @@ Welcome to the future.
 <ul class="simple">
 <li><p>add the following in the <code class="docutils literal notranslate"><span class="pre">about_us.md</span></code> file:</p></li>
 </ul>
-<div class="highlight-markdown notranslate"><div class="highlight"><pre><span></span>    ![<span class="nt">HOT-2</span>](<span class="na">_build/html/_images/logo_HOT.jpg</span>)
-    
-    ```{image} <span class="ge">_build/html/_</span>images/logo_HOT.jpg
+<div class="highlight-markdown notranslate"><div class="highlight"><pre><span></span>    ```{image} <span class="ge">_build/html/_</span>images/logo_HOT.jpg
     :alt: HOT-2
     :class: bg-primary
     :width: 200px
@@ -309,11 +307,43 @@ Welcome to the future.
     ```
 </pre></div>
 </div>
-</li>
-</ol>
 <blockquote>
 <div><p>You will notice that the image is now centered in the page</p>
 </div></blockquote>
+</li>
+<li><p>Add/Enable some MyST extensions.</p>
+<ul class="simple">
+<li><p>edit your <code class="docutils literal notranslate"><span class="pre">conf.py</span></code> file with the following :</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Enable some MyST extensions.</span>
+<span class="n">myst_enable_extensions</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s2">&quot;colon_fence&quot;</span><span class="p">,</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Now added the following into <code class="docutils literal notranslate"><span class="pre">about_us.md</span></code>:</p></li>
+</ul>
+<div class="highlight-markdown notranslate"><div class="highlight"><pre><span></span>:::{figure-md} logo-target
+:class: myclass
+
+&lt;img src=&quot;_build/html/_images/logo_HOT.jpg&quot; alt=&quot;HOT-2&quot; class=&quot;bg-primary&quot; width=&quot;300px&quot;&gt;
+
+Hawaii Ocean Time-Series <span class="ge">*University of Hawaii*</span>.
+:::
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Add the following in the <code class="docutils literal notranslate"><span class="pre">index.md</span></code> file.</p></li>
+</ul>
+<div class="highlight-markdown notranslate"><div class="highlight"><pre><span></span>Testing this thing {ref}`logo-target`.
+</pre></div>
+</div>
+<blockquote>
+<div><p>This will take you to <code class="docutils literal notranslate"><span class="pre">Test-3</span></code> automatically =)</p>
+</div></blockquote>
+</li>
+</ol>
 </div>
 </div>
 
@@ -336,7 +366,7 @@ Welcome to the future.
 <h3>Navigation</h3>
 <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="about_us.html">About Us</a></li>
+<li class="toctree-l1"><a class="reference internal" href="about_us.html">Markdown Images</a></li>
 </ul>
 
 <div class="relations">

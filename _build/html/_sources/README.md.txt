@@ -262,8 +262,6 @@
     + add the following in the `about_us.md` file: 
    
     ```markdown
-        ![HOT-2](_build/html/_images/logo_HOT.jpg)
-        
         ```{image} _build/html/_images/logo_HOT.jpg
         :alt: HOT-2
         :class: bg-primary
@@ -271,6 +269,33 @@
         :align: center
         ```
     ```
+    > You will notice that the image is now centered in the page
+
+4. Add/Enable some MyST extensions.
+
+    + edit your `conf.py` file with the following :
+    
+    ```python
+    # Enable some MyST extensions.
+    myst_enable_extensions = [
+        "colon_fence",
+    ]
+    ```
+    
+    + Now added the following into `about_us.md`:
+    ```markdown
+    :::{figure-md} logo-target
+    :class: myclass
+
+    <img src="_build/html/_images/logo_HOT.jpg" alt="HOT-2" class="bg-primary" width="300px">
+
+    Hawaii Ocean Time-Series *University of Hawaii*.
+    :::
+    ```
    
-> You will notice that the image is now centered in the page
+   + Add the following in the `index.md` file.
    
+   ```markdown
+   Testing this thing {ref}`logo-target`.
+   ```
+   > This will take you to `Test-3` automatically =)
