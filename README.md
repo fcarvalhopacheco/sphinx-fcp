@@ -299,12 +299,27 @@
    Testing this thing {ref}`logo-target`.
    ```
 
-+ 5. Adding Warnings
+5. Adding Warnings
     
     ```markdown
     :::{warning}
     Testing this warning.
   
     - Careful, I am watching you =)
+    
     :::
     ```
+
+6.  Do the following to change the link title automatically 
+
+    ```markdown
+    Add this line to test linking [](markdown_tips.md)
+    ``` 
+    
+7. For  heading references:     
+    
+   ```
+    (heading-role)=
+    ### Heading and Role
+    ```
+    > Now you can type ``` {ref}`heading-role` ``` to see {ref}`heading-role`
