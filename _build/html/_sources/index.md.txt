@@ -8,5 +8,5 @@ Testing this thing {ref}`logo-target`
 :maxdepth: 2
 :caption: "Contents:"
    
-about_us
+markdown_tips
 ```

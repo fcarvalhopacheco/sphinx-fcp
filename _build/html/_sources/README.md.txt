@@ -282,7 +282,7 @@
     ]
     ```
     
-    + Now added the following into `about_us.md`:
+    + Add the following into `about_us.md`:
     ```markdown
     :::{figure-md} logo-target
     :class: myclass
@@ -298,4 +298,13 @@
    ```markdown
    Testing this thing {ref}`logo-target`.
    ```
-   > This will take you to `Test-3` automatically =)
+
++ 5. Adding Warnings
+    
+    ```markdown
+    :::{warning}
+    Testing this warning.
+  
+    - Careful, I am watching you =)
+    :::
+    ```

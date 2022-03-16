@@ -1,4 +1,4 @@
-# Markdown Images
+# Markdown Tips
 
 We are cooking, baby! 
 
@@ -49,4 +49,14 @@ Hawaii Ocean Time-Series *University of Hawaii*.
 <img src="_build/html/_images/logo_HOT.jpg" alt="HOT-2" class="bg-primary" width="300px">
 
 Hawaii Ocean Time-Series *University of Hawaii*.
+:::
+
+
+## Test-4
+
+:::{warning}
+Testing this warning.
+
+- Careful, I am watching you =)
+
 :::
