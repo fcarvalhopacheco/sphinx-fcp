@@ -1,6 +1,6 @@
-# Schlockchain Homepage
+# Test 
 
-Welcome to the future.
+Welcome to my testing.
 
 ```{toctree}
 :maxdepth: 2

@@ -258,7 +258,62 @@ Welcome to the future?.
 </pre></div>
 </div>
 </li>
+<li><p>Clean up</p>
+<ul class="simple">
+<li><p>Rename <code class="docutils literal notranslate"><span class="pre">index.rst</span></code></p></li>
+</ul>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>mv index.rst index.md
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>convert the text to:</p></li>
+</ul>
+<div class="highlight-markdown notranslate"><div class="highlight"><pre><span></span><span class="gh"># Testing our First Sphinx Homepage</span>
+
+Welcome to the future.
+
+    ```{toctree}
+    :maxdepth: 2
+    :caption: &quot;Contents:&quot;
+       
+    about_us
+    ```
+</pre></div>
+</div>
+</li>
 </ol>
+</div>
+<div class="section" id="images">
+<h2>2. Images<a class="headerlink" href="#images" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p>Many ways to use images:</p>
+<p><code class="docutils literal notranslate"><span class="pre">![HOT](https://datadocs.bco-dmo.org/d2/images/logos/logo_HOT.jpg)</span></code>, generates the following:</p>
+<p><img alt="HOT" src="https://datadocs.bco-dmo.org/d2/images/logos/logo_HOT.jpg" /></p>
+</li>
+<li><p>Download the image locally:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>curl https://datadocs.bco-dmo.org/d2/images/logos/logo_HOT.jpg &gt; _build/hmtl/_images/logo_HOT.jpg 
+</pre></div>
+</div>
+</li>
+<li><p>Edit the image:</p>
+<ul class="simple">
+<li><p>add the following in the <code class="docutils literal notranslate"><span class="pre">about_us.md</span></code> file:</p></li>
+</ul>
+<div class="highlight-markdown notranslate"><div class="highlight"><pre><span></span>    ![<span class="nt">HOT-2</span>](<span class="na">_build/html/_images/logo_HOT.jpg</span>)
+    
+    ```{image} <span class="ge">_build/html/_</span>images/logo_HOT.jpg
+    :alt: HOT-2
+    :class: bg-primary
+    :width: 200px
+    :align: center
+    ```
+</pre></div>
+</div>
+</li>
+</ol>
+<blockquote>
+<div><p>You will notice that the image is now centered in the page</p>
+</div></blockquote>
 </div>
 </div>
 
@@ -281,7 +336,7 @@ Welcome to the future?.
 <h3>Navigation</h3>
 <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="about_us.html">This is us =)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="about_us.html">About Us</a></li>
 </ul>
 
 <div class="relations">

@@ -231,7 +231,7 @@
     + convert the text to:
     
     ```markdown
-    # Schlockchain Homepage
+    # Testing our First Sphinx Homepage
 
     Welcome to the future.
 
@@ -243,4 +243,34 @@
         ```
     ```
  
-## 2. Simple Markdown 
+## 2. Images
+
+1. Many ways to use images:
+     
+    `![HOT](https://datadocs.bco-dmo.org/d2/images/logos/logo_HOT.jpg)`, generates the following:
+
+    ![HOT](https://datadocs.bco-dmo.org/d2/images/logos/logo_HOT.jpg)
+
+2. Download the image locally:
+    
+    ```shell script
+    curl https://datadocs.bco-dmo.org/d2/images/logos/logo_HOT.jpg > _build/hmtl/_images/logo_HOT.jpg 
+    ```
+    
+3. Edit the image:
+
+    + add the following in the `about_us.md` file: 
+   
+    ```markdown
+        ![HOT-2](_build/html/_images/logo_HOT.jpg)
+        
+        ```{image} _build/html/_images/logo_HOT.jpg
+        :alt: HOT-2
+        :class: bg-primary
+        :width: 200px
+        :align: center
+        ```
+    ```
+   
+> You will notice that the image is now centered in the page
+   
