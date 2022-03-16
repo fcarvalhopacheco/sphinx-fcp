@@ -282,7 +282,7 @@
     ]
     ```
     
-    + Now added the following into `about_us.md`:
+    + Add the following into `about_us.md`:
     ```markdown
     :::{figure-md} logo-target
     :class: myclass
