@@ -14,7 +14,7 @@
     <script src="_static/doctools.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="prev" title="Test" href="index.html" />
+    <link rel="prev" title="Sphinx and Markdown training" href="README.html" />
    
   <link rel="stylesheet" href="_static/custom.css" type="text/css" />
   
@@ -73,6 +73,15 @@
 </div>
 <div class="section" id="warnings">
 <h2>Warnings<a class="headerlink" href="#warnings" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-markdown notranslate"><div class="highlight"><pre><span></span>:::{warning}
+Testing this warning.
+
+<span class="k">-</span> Careful, I am watching you =)
+
+:::
+</pre></div>
+</div>
+<p>Generates:</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>Testing this warning.</p>
@@ -160,8 +169,37 @@
 
 </dd></dl>
 
+<blockquote>
+<div><p>This is visually nice! Also, it’s semantically rich.</p>
+</div></blockquote>
 </li>
 </ul>
+</div>
+<div class="section" id="referencing-symbols">
+<h2>Referencing Symbols<a class="headerlink" href="#referencing-symbols" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><p>Example-1 , we can us <code class="docutils literal notranslate"><span class="pre">MyST</span></code> extended markdown syntax:</p>
+<div class="highlight-markdown notranslate"><div class="highlight"><pre><span></span>As we can see in [<span class="nt">This is my_api.md</span>](<span class="na">my_api.MyDemo</span>), this is nice!
+</pre></div>
+</div>
+<p>As we can see in <a class="reference internal" href="#my_api.MyDemo" title="my_api.MyDemo"><span class="xref myst py py-class">This is my_api.md</span></a>, this is nice!</p>
+</li>
+<li><p>Example-2, we can also use <code class="docutils literal notranslate"><span class="pre">role-base</span></code> syntax:</p>
+<div class="highlight-markdown notranslate"><div class="highlight"><pre><span></span>As we can see in {py:class}`my_api.MyDemo`, this is nice!
+</pre></div>
+</div>
+<p>As we can see in <a class="reference internal" href="#my_api.MyDemo" title="my_api.MyDemo"><code class="xref py py-class docutils literal notranslate"><span class="pre">my_api.MyDemo</span></code></a>, this is nice!</p>
+</li>
+<li><p>Example-3, provide your own text:</p>
+<div class="highlight-markdown notranslate"><div class="highlight"><pre><span></span>As we can see in {py:class}`TESTING!&lt;my_api.MyDemo`, this is nice!
+</pre></div>
+</div>
+<p>As we can see in <a class="reference internal" href="#my_api.MyDemo" title="my_api.MyDemo"><code class="xref py py-class docutils literal notranslate"><span class="pre">TESTING!</span></code></a>, this is nice!</p>
+</li>
+</ul>
+</div>
+<div class="section" id="linking-between-sites-with-intersphinx">
+<h2>Linking Between Sites with Intersphinx<a class="headerlink" href="#linking-between-sites-with-intersphinx" title="Permalink to this headline">¶</a></h2>
 </div>
 </div>
 
@@ -184,6 +222,7 @@
 <h3>Navigation</h3>
 <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="README.html">Sphinx and Markdown training</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Markdown Tips</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#add-figure">Add Figure</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#edit-figure">Edit Figure</a></li>
@@ -191,6 +230,8 @@
 <li class="toctree-l2"><a class="reference internal" href="#warnings">Warnings</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#linking">Linking</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#documenting-code">Documenting Code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#referencing-symbols">Referencing Symbols</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#linking-between-sites-with-intersphinx">Linking Between Sites with Intersphinx</a></li>
 </ul>
 </li>
 </ul>
@@ -199,7 +240,7 @@
 <h3>Related Topics</h3>
 <ul>
   <li><a href="index.html">Documentation overview</a><ul>
-      <li>Previous: <a href="index.html" title="previous chapter">Test</a></li>
+      <li>Previous: <a href="README.html" title="previous chapter">Sphinx and Markdown training</a></li>
   </ul></li>
 </ul>
 </div>

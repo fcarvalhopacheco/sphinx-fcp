@@ -14,6 +14,8 @@
     <script src="_static/doctools.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Markdown Tips" href="markdown_tips.html" />
+    <link rel="prev" title="Test" href="index.html" />
    
   <link rel="stylesheet" href="_static/custom.css" type="text/css" />
   
@@ -160,7 +162,7 @@ and the browser is refreshed.</p>
 </pre></div>
 </div>
 </li>
-<li><p>Added <code class="docutils literal notranslate"><span class="pre">.env/</span></code> folder to <code class="docutils literal notranslate"><span class="pre">conf.py</span></code>.</p>
+<li><p>Add <code class="docutils literal notranslate"><span class="pre">.env/</span></code> folder to <code class="docutils literal notranslate"><span class="pre">conf.py</span></code>.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">exclude_patterns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;_build&#39;</span><span class="p">,</span> <span class="s1">&#39;Thumbs.db&#39;</span><span class="p">,</span> <span class="s1">&#39;.DS_Store&#39;</span><span class="p">,</span><span class="s1">&#39;.env&#39;</span><span class="p">]</span>
 </pre></div>
 </div>
@@ -204,30 +206,27 @@ The HTML pages are <span class="k">in</span> _build/html.
 <blockquote>
 <div><p>Allows you to write sphinx documentation entirely in markdown.</p>
 </div></blockquote>
-</li>
-</ul>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nv">$conda</span> install -c conda-forge myst-parser
 </pre></div>
 </div>
-<ul class="simple">
-<li><p>open <code class="docutils literal notranslate"><span class="pre">conf.py</span></code>, and add the following:</p></li>
-</ul>
+</li>
+<li><p>open <code class="docutils literal notranslate"><span class="pre">conf.py</span></code>, and add the following:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">extensions</span> <span class="o">=</span> <span class="p">[</span>
     <span class="s2">&quot;myst_parser&quot;</span><span class="p">,</span>
 <span class="p">]</span>
 </pre></div>
 </div>
 </li>
-<li><p>Testing the markdown file</p>
-<ul class="simple">
-<li><p>Create the following</p></li>
 </ul>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nv">$touch</span> about_us.md
+</li>
+<li><p>Testing the markdown file</p>
+<ul>
+<li><p>Create the following</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nv">$touch</span> markdown_tips.md
 </pre></div>
 </div>
-<ul class="simple">
-<li><p>Add the following:</p></li>
-</ul>
+</li>
+<li><p>Add the following:</p>
 <div class="highlight-markdown notranslate"><div class="highlight"><pre><span></span><span class="gh"># This is us =)  </span>
 
 <span class="k">&gt; </span><span class="ge">Testing! </span>
@@ -242,9 +241,8 @@ The HTML pages are <span class="k">in</span> _build/html.
 <span class="k">-</span> Test4
 </pre></div>
 </div>
-<ul class="simple">
-<li><p>add <code class="docutils literal notranslate"><span class="pre">about_us.md</span></code> to <code class="docutils literal notranslate"><span class="pre">index.rst</span></code></p></li>
-</ul>
+</li>
+<li><p>add <code class="docutils literal notranslate"><span class="pre">markdown_tips.md</span></code> to <code class="docutils literal notranslate"><span class="pre">index.rst</span></code></p>
 <div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="gh">TEST PAGE!</span>
 <span class="gh">=====================</span>
 
@@ -254,32 +252,35 @@ Welcome to the future?.
    <span class="nc">:maxdepth:</span> 2
    <span class="nc">:caption:</span> Contents:
 
-   about_us
+   markdown_tips
 </pre></div>
 </div>
 </li>
-<li><p>Clean up</p>
-<ul class="simple">
-<li><p>Rename <code class="docutils literal notranslate"><span class="pre">index.rst</span></code></p></li>
 </ul>
+</li>
+<li><p>Clean up</p>
+<ul>
+<li><p>Rename <code class="docutils literal notranslate"><span class="pre">index.rst</span></code></p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>mv index.rst index.md
 </pre></div>
 </div>
-<ul class="simple">
-<li><p>convert the text to:</p></li>
-</ul>
+</li>
+<li><p>convert the text to:</p>
 <div class="highlight-markdown notranslate"><div class="highlight"><pre><span></span><span class="gh"># Testing our First Sphinx Homepage</span>
 
 Welcome to the future.
 
-    ```{toctree}
-    :maxdepth: 2
-    :caption: &quot;Contents:&quot;
-       
-    about_us
-    ```
+```{toctree}
+:maxdepth: 2
+:caption: &quot;Contents:&quot;
+   
+markdown_tips
+```
+````
 </pre></div>
 </div>
+</li>
+</ul>
 </li>
 </ol>
 </div>
@@ -296,34 +297,33 @@ Welcome to the future.
 </div>
 </li>
 <li><p>Edit and display:</p>
-<ul class="simple">
-<li><p>add the following in the <code class="docutils literal notranslate"><span class="pre">about_us.md</span></code> file:</p></li>
-</ul>
-<div class="highlight-markdown notranslate"><div class="highlight"><pre><span></span>    ```{image} <span class="ge">_build/html/_</span>images/logo_HOT.jpg
-    :alt: HOT-2
-    :class: bg-primary
-    :width: 200px
-    :align: center
-    ```
+<ul>
+<li><p>add the following in the <code class="docutils literal notranslate"><span class="pre">markdown_tips.md</span></code> file:</p>
+<div class="highlight-markdown notranslate"><div class="highlight"><pre><span></span>```{image} <span class="ge">_build/html/_</span>images/logo_HOT.jpg
+:alt: HOT-2
+:class: bg-primary
+:width: 200px
+:align: center
+```
 </pre></div>
 </div>
+</li>
+</ul>
 <blockquote>
 <div><p>You will notice that the image is now centered in the page</p>
 </div></blockquote>
 </li>
 <li><p>Add/Enable some MyST extensions.</p>
-<ul class="simple">
-<li><p>edit your <code class="docutils literal notranslate"><span class="pre">conf.py</span></code> file with the following :</p></li>
-</ul>
+<ul>
+<li><p>edit your <code class="docutils literal notranslate"><span class="pre">conf.py</span></code> file with the following :</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Enable some MyST extensions.</span>
 <span class="n">myst_enable_extensions</span> <span class="o">=</span> <span class="p">[</span>
     <span class="s2">&quot;colon_fence&quot;</span><span class="p">,</span>
 <span class="p">]</span>
 </pre></div>
 </div>
-<ul class="simple">
-<li><p>Add the following into <code class="docutils literal notranslate"><span class="pre">about_us.md</span></code>:</p></li>
-</ul>
+</li>
+<li><p>Add the following into <code class="docutils literal notranslate"><span class="pre">markdown_tips.md</span></code>:</p>
 <div class="highlight-markdown notranslate"><div class="highlight"><pre><span></span>:::{figure-md} logo-target
 :class: myclass
 
@@ -333,12 +333,13 @@ Hawaii Ocean Time-Series <span class="ge">*University of Hawaii*</span>.
 :::
 </pre></div>
 </div>
-<ul class="simple">
-<li><p>Add the following in the <code class="docutils literal notranslate"><span class="pre">index.md</span></code> file.</p></li>
-</ul>
+</li>
+<li><p>Add the following in the <code class="docutils literal notranslate"><span class="pre">index.md</span></code> file.</p>
 <div class="highlight-markdown notranslate"><div class="highlight"><pre><span></span>Testing this thing {ref}`logo-target`.
 </pre></div>
 </div>
+</li>
+</ul>
 </li>
 <li><p>Adding Warnings</p>
 <div class="highlight-markdown notranslate"><div class="highlight"><pre><span></span>:::{warning}
@@ -356,8 +357,8 @@ Testing this warning.
 </div>
 </li>
 <li><p>For  heading references:</p>
-<div class="highlight-markdown notranslate"><div class="highlight"><pre><span></span> (heading-role)=
- ### Heading and Role
+<div class="highlight-markdown notranslate"><div class="highlight"><pre><span></span>(heading-role)=
+<span class="gu">### Heading and Role</span>
 </pre></div>
 </div>
 <blockquote>
@@ -433,6 +434,27 @@ python -m pip install sphinx-autodoc-typehints
 </li>
 </ul>
 </li>
+<li><p>Referencing Symbols</p>
+<ul>
+<li><p>Open <code class="docutils literal notranslate"><span class="pre">markdown_tips.md</span></code> for editing. Let’s talk about <code class="docutils literal notranslate"><span class="pre">my_api.md</span></code> using
+markdown syntax.</p></li>
+<li><p>Example-1 , we can us <code class="docutils literal notranslate"><span class="pre">MyST</span></code> extended markdown syntax:</p>
+<div class="highlight-markdown notranslate"><div class="highlight"><pre><span></span>As we can see in [<span class="nt">This is my_api.md</span>](<span class="na">my_api.MyDemo</span>), this is nice!
+</pre></div>
+</div>
+</li>
+<li><p>Example-2, we can also use <code class="docutils literal notranslate"><span class="pre">role-base</span></code> syntax:</p>
+<div class="highlight-markdown notranslate"><div class="highlight"><pre><span></span>As we can see in {py:class}`my_api.MyDemo`, this is nice!
+</pre></div>
+</div>
+</li>
+<li><p>Example-3, provide your own text:</p>
+<div class="highlight-markdown notranslate"><div class="highlight"><pre><span></span>As we can see in {py:class}`TESTING!&lt;my_api.MyDemo`, this is nice!
+</pre></div>
+</div>
+</li>
+</ul>
+</li>
 </ol>
 </div>
 </div>
@@ -455,7 +477,13 @@ python -m pip install sphinx-autodoc-typehints
 
 <h3>Navigation</h3>
 <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
-<ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Sphinx and Markdown training</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#setup">1. Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#markdown-tips">2. Markdown TIPS:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#documenting-your-code">3. Documenting your Code</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="markdown_tips.html">Markdown Tips</a></li>
 </ul>
 
@@ -463,6 +491,8 @@ python -m pip install sphinx-autodoc-typehints
 <h3>Related Topics</h3>
 <ul>
   <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="index.html" title="previous chapter">Test</a></li>
+      <li>Next: <a href="markdown_tips.html" title="next chapter">Markdown Tips</a></li>
   </ul></li>
 </ul>
 </div>

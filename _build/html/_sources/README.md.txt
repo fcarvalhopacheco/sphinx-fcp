@@ -122,7 +122,7 @@
     server.serve(root='_build/html')
     ```
    
-7. Added `.env/` folder to `conf.py`.
+7. Add `.env/` folder to `conf.py`.
     
     ```python
     exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store','.env']
@@ -168,80 +168,80 @@
     + Install MyST - Markedly Structured Text
         >   Allows you to write sphinx documentation entirely in markdown.
     
-    ```shell script
-    $conda install -c conda-forge myst-parser
-    ```
+        ```shell script
+        $conda install -c conda-forge myst-parser
+        ```
     
     + open `conf.py`, and add the following:
     
-    ```python
-    extensions = [
-        "myst_parser",
-    ]
-    ```
+        ```python
+        extensions = [
+            "myst_parser",
+        ]
+        ```
    
 11. Testing the markdown file
 
     + Create the following
-    ```shell script
-    $touch about_us.md
-    ```
+        ```shell script
+        $touch markdown_tips.md
+        ```
     
     + Add the following:
     
-    ```markdown
-    # This is us =)  
+        ```markdown
+        # This is us =)  
 
-    > Testing! 
+        > Testing! 
 
-    ### 1. Test
-    ### 1.1 Testing 
+        ### 1. Test
+        ### 1.1 Testing 
 
-    1. Test1
-    2. Test2
+        1. Test1
+        2. Test2
 
-    + Test3 
-    - Test4
-    ```
+        + Test3 
+        - Test4
+        ```
 
-    + add `about_us.md` to `index.rst`
+    + add `markdown_tips.md` to `index.rst`
     
-    ```rst
-    TEST PAGE!
-    =====================
+        ```rst
+        TEST PAGE!
+        =====================
 
-    Welcome to the future?.
+        Welcome to the future?.
 
-    .. toctree::
-       :maxdepth: 2
-       :caption: Contents:
+        .. toctree::
+           :maxdepth: 2
+           :caption: Contents:
 
-       about_us
+           markdown_tips
 
-    ```     
+        ```     
 
 12. Clean up
 
     + Rename `index.rst`
     
-    ```shell script
-    mv index.rst index.md
-    ```
+        ```shell script
+        mv index.rst index.md
+        ```
     
     + convert the text to:
     
-    ```markdown
-    # Testing our First Sphinx Homepage
+        `````markdown
+        # Testing our First Sphinx Homepage
 
-    Welcome to the future.
+        Welcome to the future.
 
         ```{toctree}
         :maxdepth: 2
         :caption: "Contents:"
            
-        about_us
+        markdown_tips
         ```
-    ```
+        ````
  
 ## 2. Markdown TIPS:
 
@@ -259,45 +259,46 @@
     
 3. Edit and display:
 
-    + add the following in the `about_us.md` file: 
+    + add the following in the `markdown_tips.md` file: 
    
-    ```markdown
+        ````markdown
         ```{image} _build/html/_images/logo_HOT.jpg
         :alt: HOT-2
         :class: bg-primary
         :width: 200px
         :align: center
         ```
-    ```
+        ````
     > You will notice that the image is now centered in the page
 
 4. Add/Enable some MyST extensions.
 
     + edit your `conf.py` file with the following :
     
-    ```python
-    # Enable some MyST extensions.
-    myst_enable_extensions = [
-        "colon_fence",
-    ]
-    ```
+        ```python
+        # Enable some MyST extensions.
+        myst_enable_extensions = [
+            "colon_fence",
+        ]
+        ```
     
-    + Add the following into `about_us.md`:
-    ```markdown
-    :::{figure-md} logo-target
-    :class: myclass
+    + Add the following into `markdown_tips.md`:
+        
+        ```markdown
+        :::{figure-md} logo-target
+        :class: myclass
 
-    <img src="_build/html/_images/logo_HOT.jpg" alt="HOT-2" class="bg-primary" width="300px">
+        <img src="_build/html/_images/logo_HOT.jpg" alt="HOT-2" class="bg-primary" width="300px">
 
-    Hawaii Ocean Time-Series *University of Hawaii*.
-    :::
-    ```
+        Hawaii Ocean Time-Series *University of Hawaii*.
+        :::
+        ```
    
    + Add the following in the `index.md` file.
    
-   ```markdown
-   Testing this thing {ref}`logo-target`.
-   ```
+       ```markdown
+       Testing this thing {ref}`logo-target`.
+       ```
 
 5. Adding Warnings
     
@@ -318,7 +319,7 @@
     
 7. For  heading references:     
     
-   ```markdown
+    ```markdown
     (heading-role)=
     ### Heading and Role
     ```
@@ -381,7 +382,7 @@
         ```shell script
         # use the module flag -m with python so that it uses the conda python for the installation
         python -m pip install sphinx-autodoc-typehints        
-       ``` 
+        ``` 
       
     + Next, edit your `conf.py` to enable both Sphinx extensions
     
@@ -393,3 +394,26 @@
             "sphinx_autodoc_typehints",
         ]
          ```
+      
+ 3. Referencing Symbols
+ 
+    + Open `markdown_tips.md` for editing. Let's talk about `my_api.md` using
+    markdown syntax. 
+ 
+    + Example-1 , we can us `MyST` extended markdown syntax:
+
+        ```markdown
+        As we can see in [This is my_api.md](my_api.MyDemo), this is nice!
+        ```
+
+    + Example-2, we can also use `role-base` syntax:
+
+        ```markdown
+        As we can see in {py:class}`my_api.MyDemo`, this is nice!
+        ```
+    
+    + Example-3, provide your own text:
+
+        ```markdown 
+        As we can see in {py:class}`TESTING!<my_api.MyDemo`, this is nice!
+        ```

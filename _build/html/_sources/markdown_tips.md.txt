@@ -54,6 +54,17 @@ Hawaii Ocean Time-Series *University of Hawaii*.
 
 ## Warnings
 
+```markdown
+:::{warning}
+Testing this warning.
+
+- Careful, I am watching you =)
+
+:::
+```
+
+Generates:
+
 :::{warning}
 Testing this warning.
 
@@ -110,4 +121,29 @@ Testing this warning.
     .. autoclass:: my_api.MyDemo
       :members:
     ```
+    > This is visually nice! Also, it's semantically rich.
     
+## Referencing Symbols
+ 
++ Example-1 , we can us `MyST` extended markdown syntax:
+
+    ```markdown
+    As we can see in [This is my_api.md](my_api.MyDemo), this is nice!
+    ```
+    As we can see in [This is my_api.md](my_api.MyDemo), this is nice!
+
++ Example-2, we can also use `role-base` syntax:
+
+    ```markdown
+    As we can see in {py:class}`my_api.MyDemo`, this is nice!
+    ```
+    As we can see in {py:class}`my_api.MyDemo`, this is nice!
+    
++ Example-3, provide your own text:
+
+    ```markdown 
+    As we can see in {py:class}`TESTING!<my_api.MyDemo`, this is nice!
+    ```
+    As we can see in {py:class}`TESTING!<my_api.MyDemo>`, this is nice!
+
+## Linking Between Sites with Intersphinx
