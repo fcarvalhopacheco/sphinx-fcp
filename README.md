@@ -243,9 +243,9 @@
         ```
     ```
  
-## 2. Images
+## 2. Markdown TIPS:
 
-1. Many ways to use images:
+1. How to display  images:
      
     `![HOT](https://datadocs.bco-dmo.org/d2/images/logos/logo_HOT.jpg)`, generates the following:
 
@@ -257,7 +257,7 @@
     curl https://datadocs.bco-dmo.org/d2/images/logos/logo_HOT.jpg > _build/hmtl/_images/logo_HOT.jpg 
     ```
     
-3. Edit the image:
+3. Edit and display:
 
     + add the following in the `about_us.md` file: 
    
@@ -318,8 +318,65 @@
     
 7. For  heading references:     
     
-   ```
+   ```markdown
     (heading-role)=
     ### Heading and Role
     ```
     > Now you can type ``` {ref}`heading-role` ``` to see {ref}`heading-role`
+
+## 3. Documenting your Code
+ 
+1. Literalinclude   
+ 
+    ````markdown   
+    ```{literalinclude} run_livereload.py
+    :emphasize-lines: 2-4  
+    ``` 
+    ````
+
+2. Autodoc
+
+    With Autodoc, your sphinx doc will automatically create a structure,
+    highlighted, interlinked collection of sections. Also, symbols in the code
+    will become `roles` in sphinx which you can directly to.  
+       
+    + Turn on `autodoc` by editing `conf.py`. Also, add the current directory 
+    to the front of our `PYTHONPATH`, so our module can be imported. 
+
+    ```python
+    import os
+    import sys
+    sys.path.insert(0, os.path.abspath('.'))
+
+    extensions = [
+       "myst_parser",
+       "sphinx.ext.autodoc",
+    ]
+    ```
+
+    + Documenting a Python Module
+    
+    Let's create a page called `my_api.py` into which we would like
+    to include some module documentation.
+    
+    ```markdown
+    touch my_api.py
+    ```
+    
+    The [Sphinx extension `autodoc`](https://myst-parser.readthedocs.io/en/latest/sphinx/use.html?highlight=sphinx.ext.autodoc#use-sphinx-ext-autodoc-in-markdown-files)
+    , which pulls in code documentation from docstrings, is currently hard-coded to 
+    parse reStructuredText. This is incompatible with our MyST extension. However, we can use `eval-rst` to make  
+    `autodoc` work.
+    
+    ````markdown
+    ```{eval-rst}
+    .. autoclas:: my_api.MyDemo
+    ```
+    ````
+      
+    + Lets install the `sphinx-autodoc-typehints` and also enable [`sphinx.ext.napoleon`](https://www.sphinx-doc.org/en/master/usage/extensions/napoleon.html).
+    These is to teach Sphinx to interpret the docstring and typehints.
+   
+    ```shell script
+    
+i   ``` 

@@ -79,3 +79,19 @@ Testing this warning.
     ### Heading and Role
     ```
 + Now you can type ``` {ref}`heading-role` ``` to see {ref}`heading-role`
+
+
+## Documenting Code 
+
++ Include your code from a file
+
+    ````markdown 
+    ```{literalinclude} run_livereload.py
+    :emphasize-lines: 2-3
+    ``` 
+    ````
++ The a above code generates the following:
+
+    ```{literalinclude} run_livereload.py
+    :emphasize-lines: 2-3
+    ```

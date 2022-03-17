@@ -283,10 +283,10 @@ Welcome to the future.
 </li>
 </ol>
 </div>
-<div class="section" id="images">
-<h2>2. Images<a class="headerlink" href="#images" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="markdown-tips">
+<h2>2. Markdown TIPS:<a class="headerlink" href="#markdown-tips" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic">
-<li><p>Many ways to use images:</p>
+<li><p>How to display  images:</p>
 <p><code class="docutils literal notranslate"><span class="pre">![HOT](https://datadocs.bco-dmo.org/d2/images/logos/logo_HOT.jpg)</span></code>, generates the following:</p>
 <p><img alt="HOT" src="https://datadocs.bco-dmo.org/d2/images/logos/logo_HOT.jpg" /></p>
 </li>
@@ -295,7 +295,7 @@ Welcome to the future.
 </pre></div>
 </div>
 </li>
-<li><p>Edit the image:</p>
+<li><p>Edit and display:</p>
 <ul class="simple">
 <li><p>add the following in the <code class="docutils literal notranslate"><span class="pre">about_us.md</span></code> file:</p></li>
 </ul>
@@ -356,8 +356,8 @@ Testing this warning.
 </div>
 </li>
 <li><p>For  heading references:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span> <span class="p">(</span><span class="n">heading</span><span class="o">-</span><span class="n">role</span><span class="p">)</span><span class="o">=</span>
- <span class="c1">### Heading and Role</span>
+<div class="highlight-markdown notranslate"><div class="highlight"><pre><span></span> (heading-role)=
+ ### Heading and Role
 </pre></div>
 </div>
 <blockquote>
@@ -365,6 +365,62 @@ Testing this warning.
 </div></blockquote>
 </li>
 </ol>
+</div>
+<div class="section" id="documenting-your-code">
+<h2>3. Documenting your Code<a class="headerlink" href="#documenting-your-code" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p>Literalinclude</p>
+<div class="highlight-markdown notranslate"><div class="highlight"><pre><span></span>```{literalinclude} run_livereload.py
+:emphasize-lines: 2-4  
+``` 
+</pre></div>
+</div>
+</li>
+<li><p>Autodoc</p>
+<p>With Autodoc, your sphinx doc will automatically create a structure,
+highlighted, interlinked collection of sections. Also, symbols in the code
+will become <code class="docutils literal notranslate"><span class="pre">roles</span></code> in sphinx which you can directly to.</p>
+<ul class="simple">
+<li><p>Turn on <code class="docutils literal notranslate"><span class="pre">autodoc</span></code> by editing <code class="docutils literal notranslate"><span class="pre">conf.py</span></code>. Also, add the current directory
+to the front of our <code class="docutils literal notranslate"><span class="pre">PYTHONPATH</span></code>, so our module can be imported.</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">))</span>
+
+<span class="n">extensions</span> <span class="o">=</span> <span class="p">[</span>
+   <span class="s2">&quot;myst_parser&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;sphinx.ext.autodoc&quot;</span><span class="p">,</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Documenting a Python Module</p></li>
+</ul>
+<p>Let’s create a page called <code class="docutils literal notranslate"><span class="pre">my_api.py</span></code> into which we would like
+to include some module documentation.</p>
+<div class="highlight-markdown notranslate"><div class="highlight"><pre><span></span>touch my_api.py
+</pre></div>
+</div>
+<p>The <a class="reference external" href="https://myst-parser.readthedocs.io/en/latest/sphinx/use.html?highlight=sphinx.ext.autodoc#use-sphinx-ext-autodoc-in-markdown-files">Sphinx extension <code class="docutils literal notranslate"><span class="pre">autodoc</span></code></a>
+, which pulls in code documentation from docstrings, is currently hard-coded to
+parse reStructuredText. This is incompatible with our MyST extension. However, we can use <code class="docutils literal notranslate"><span class="pre">eval-rst</span></code> to make<br />
+<code class="docutils literal notranslate"><span class="pre">autodoc</span></code> work.</p>
+<div class="highlight-markdown notranslate"><div class="highlight"><pre><span></span>```{eval-rst}
+.. autoclas:: my_api.MyDemo
+```
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Lets install the <code class="docutils literal notranslate"><span class="pre">sphinx-autodoc-typehints</span></code> and also enable <a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/extensions/napoleon.html"><code class="docutils literal notranslate"><span class="pre">sphinx.ext.napoleon</span></code></a>.
+These is to teach Sphinx to interpret the docstring and typehints.</p></li>
+</ul>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</li>
+</ol>
+<p>i   ```</p>
 </div>
 </div>
 
