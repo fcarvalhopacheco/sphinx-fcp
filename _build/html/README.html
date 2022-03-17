@@ -380,10 +380,9 @@ Testing this warning.
 <p>With Autodoc, your sphinx doc will automatically create a structure,
 highlighted, interlinked collection of sections. Also, symbols in the code
 will become <code class="docutils literal notranslate"><span class="pre">roles</span></code> in sphinx which you can directly to.</p>
-<ul class="simple">
+<ul>
 <li><p>Turn on <code class="docutils literal notranslate"><span class="pre">autodoc</span></code> by editing <code class="docutils literal notranslate"><span class="pre">conf.py</span></code>. Also, add the current directory
-to the front of our <code class="docutils literal notranslate"><span class="pre">PYTHONPATH</span></code>, so our module can be imported.</p></li>
-</ul>
+to the front of our <code class="docutils literal notranslate"><span class="pre">PYTHONPATH</span></code>, so our module can be imported.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
 <span class="kn">import</span> <span class="nn">sys</span>
 <span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">))</span>
@@ -394,9 +393,8 @@ to the front of our <code class="docutils literal notranslate"><span class="pre"
 <span class="p">]</span>
 </pre></div>
 </div>
-<ul class="simple">
-<li><p>Documenting a Python Module</p></li>
-</ul>
+</li>
+<li><p>Documenting a Python Module</p>
 <p>Let’s create a page called <code class="docutils literal notranslate"><span class="pre">my_api.py</span></code> into which we would like
 to include some module documentation.</p>
 <div class="highlight-markdown notranslate"><div class="highlight"><pre><span></span>touch my_api.py
@@ -406,22 +404,36 @@ to include some module documentation.</p>
 , which pulls in code documentation from docstrings, is currently hard-coded to
 parse reStructuredText. This is incompatible with our MyST extension. However, we can use <code class="docutils literal notranslate"><span class="pre">eval-rst</span></code> to make<br />
 <code class="docutils literal notranslate"><span class="pre">autodoc</span></code> work.</p>
+<ul>
+<li><p>Add the following on your <code class="docutils literal notranslate"><span class="pre">markdown_tips.md</span> </code> file</p>
 <div class="highlight-markdown notranslate"><div class="highlight"><pre><span></span>```{eval-rst}
 .. autoclas:: my_api.MyDemo
 ```
 </pre></div>
 </div>
-<ul class="simple">
-<li><p>Lets install the <code class="docutils literal notranslate"><span class="pre">sphinx-autodoc-typehints</span></code> and also enable <a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/extensions/napoleon.html"><code class="docutils literal notranslate"><span class="pre">sphinx.ext.napoleon</span></code></a>.
-These is to teach Sphinx to interpret the docstring and typehints.</p></li>
+</li>
 </ul>
+</li>
+<li><p>Install the <code class="docutils literal notranslate"><span class="pre">sphinx-autodoc-typehints</span></code> and also enable <a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/extensions/napoleon.html"><code class="docutils literal notranslate"><span class="pre">sphinx.ext.napoleon</span></code></a>.
+These is to teach Sphinx to interpret the docstring and typehints.</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="c1"># use the module flag -m with python so that it uses the conda python for the installation</span>
 python -m pip install sphinx-autodoc-typehints        
 </pre></div>
 </div>
 </li>
+<li><p>Next, edit your <code class="docutils literal notranslate"><span class="pre">conf.py</span></code> to enable both Sphinx extensions</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">extensions</span> <span class="o">=</span> <span class="p">[</span>
+   <span class="s2">&quot;myst_parser&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;sphinx.ext.autodoc&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;sphinx.ext.napoleon&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;sphinx_autodoc_typehints&quot;</span><span class="p">,</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</li>
 </ol>
-<p>i   ```</p>
 </div>
 </div>
 

@@ -343,41 +343,53 @@
     + Turn on `autodoc` by editing `conf.py`. Also, add the current directory 
     to the front of our `PYTHONPATH`, so our module can be imported. 
 
-    ```python
-    import os
-    import sys
-    sys.path.insert(0, os.path.abspath('.'))
+        ```python
+        import os
+        import sys
+        sys.path.insert(0, os.path.abspath('.'))
 
-    extensions = [
-       "myst_parser",
-       "sphinx.ext.autodoc",
-    ]
-    ```
+        extensions = [
+           "myst_parser",
+           "sphinx.ext.autodoc",
+        ]
+        ```
 
     + Documenting a Python Module
     
-    Let's create a page called `my_api.py` into which we would like
-    to include some module documentation.
+        Let's create a page called `my_api.py` into which we would like
+        to include some module documentation.
     
-    ```markdown
-    touch my_api.py
-    ```
+        ```markdown
+        touch my_api.py
+        ```
     
-    The [Sphinx extension `autodoc`](https://myst-parser.readthedocs.io/en/latest/sphinx/use.html?highlight=sphinx.ext.autodoc#use-sphinx-ext-autodoc-in-markdown-files)
-    , which pulls in code documentation from docstrings, is currently hard-coded to 
-    parse reStructuredText. This is incompatible with our MyST extension. However, we can use `eval-rst` to make  
-    `autodoc` work.
-    
-    ````markdown
-    ```{eval-rst}
-    .. autoclas:: my_api.MyDemo
-    ```
-    ````
+        The [Sphinx extension `autodoc`](https://myst-parser.readthedocs.io/en/latest/sphinx/use.html?highlight=sphinx.ext.autodoc#use-sphinx-ext-autodoc-in-markdown-files)
+        , which pulls in code documentation from docstrings, is currently hard-coded to 
+        parse reStructuredText. This is incompatible with our MyST extension. However, we can use `eval-rst` to make  
+        `autodoc` work.
+        
+        + Add the following on your `markdown_tips.md ` file 
+            ````markdown
+            ```{eval-rst}
+            .. autoclas:: my_api.MyDemo
+            ```
+            ````
       
-    + Lets install the `sphinx-autodoc-typehints` and also enable [`sphinx.ext.napoleon`](https://www.sphinx-doc.org/en/master/usage/extensions/napoleon.html).
+    + Install the `sphinx-autodoc-typehints` and also enable [`sphinx.ext.napoleon`](https://www.sphinx-doc.org/en/master/usage/extensions/napoleon.html).
     These is to teach Sphinx to interpret the docstring and typehints.
    
-    ```shell script
-    # use the module flag -m with python so that it uses the conda python for the installation
-    python -m pip install sphinx-autodoc-typehints        
-i   ``` 
+        ```shell script
+        # use the module flag -m with python so that it uses the conda python for the installation
+        python -m pip install sphinx-autodoc-typehints        
+       ``` 
+      
+    + Next, edit your `conf.py` to enable both Sphinx extensions
+    
+         ```python
+         extensions = [
+            "myst_parser",
+            "sphinx.ext.autodoc",
+            "sphinx.ext.napoleon",
+            "sphinx_autodoc_typehints",
+        ]
+         ```

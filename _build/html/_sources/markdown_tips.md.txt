@@ -83,15 +83,31 @@ Testing this warning.
 
 ## Documenting Code 
 
-+ Include your code from a file
++ Include your code from a file with lines emphasized
 
     ````markdown 
     ```{literalinclude} run_livereload.py
     :emphasize-lines: 2-3
     ``` 
-    ````
+     ````
 + The a above code generates the following:
 
     ```{literalinclude} run_livereload.py
     :emphasize-lines: 2-3
     ```
+  
++ Documenting a Module: 
+     
+    ````markdown
+    ```{eval-rst}
+    .. autoclass:: my_api.MyDemo:W
+  
+      :members:
+    ```
+    ````
+    
+    ```{eval-rst}
+    .. autoclass:: my_api.MyDemo
+      :members:
+    ```
+    

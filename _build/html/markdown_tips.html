@@ -107,7 +107,7 @@
 <div class="section" id="documenting-code">
 <h2>Documenting Code<a class="headerlink" href="#documenting-code" title="Permalink to this headline">¶</a></h2>
 <ul>
-<li><p>Include your code from a file</p>
+<li><p>Include your code from a file with lines emphasized</p>
 <div class="highlight-markdown notranslate"><div class="highlight"><pre><span></span>```{literalinclude} run_livereload.py
 :emphasize-lines: 2-3
 ``` 
@@ -127,6 +127,39 @@
     <span class="n">server</span><span class="o">.</span><span class="n">serve</span><span class="p">(</span><span class="n">root</span><span class="o">=</span><span class="s1">&#39;_build/html&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
+</li>
+<li><p>Documenting a Module:</p>
+<div class="highlight-markdown notranslate"><div class="highlight"><pre><span></span>```{eval-rst}
+.. autoclass:: my_api.MyDemo:W
+
+  :members:
+```
+</pre></div>
+</div>
+<dl class="py class">
+<dt class="sig sig-object py" id="my_api.MyDemo">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">my_api.</span></span><span class="sig-name descname"><span class="pre">MyDemo</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#my_api.MyDemo" title="Permalink to this definition">¶</a></dt>
+<dd><p>A <em>great</em> demo</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="my_api.MyDemo.hello">
+<span class="sig-name descname"><span class="pre">hello</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">greeting</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#my_api.MyDemo.hello" title="Permalink to this definition">¶</a></dt>
+<dd><p>The canonical hello world example.</p>
+<p>A <em>longer</em> description with some <strong>RST</strong>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>name</strong> – The person to say hello to.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The greeting</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
 </li>
 </ul>
 </div>
