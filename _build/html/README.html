@@ -415,7 +415,8 @@ parse reStructuredText. This is incompatible with our MyST extension. However, w
 <li><p>Lets install the <code class="docutils literal notranslate"><span class="pre">sphinx-autodoc-typehints</span></code> and also enable <a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/extensions/napoleon.html"><code class="docutils literal notranslate"><span class="pre">sphinx.ext.napoleon</span></code></a>.
 These is to teach Sphinx to interpret the docstring and typehints.</p></li>
 </ul>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="c1"># use the module flag -m with python so that it uses the conda python for the installation</span>
+python -m pip install sphinx-autodoc-typehints        
 </pre></div>
 </div>
 </li>

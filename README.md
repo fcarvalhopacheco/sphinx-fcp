@@ -378,5 +378,6 @@
     These is to teach Sphinx to interpret the docstring and typehints.
    
     ```shell script
-    
+    # use the module flag -m with python so that it uses the conda python for the installation
+    python -m pip install sphinx-autodoc-typehints        
 i   ``` 
