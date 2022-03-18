@@ -4,7 +4,8 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Markdown Tips &#8212; myfirst-sphinx  documentation</title>
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="_static/alabaster.css" />
@@ -31,19 +32,19 @@
 
           <div class="body" role="main">
             
-  <div class="section" id="markdown-tips">
+  <section id="markdown-tips">
 <h1>Markdown Tips<a class="headerlink" href="#markdown-tips" title="Permalink to this headline">¶</a></h1>
 <p>We are cooking, baby!</p>
 <p>We are <strong>Testing</strong> .</p>
 <ul class="simple">
 <li><p>Our <code class="docutils literal notranslate"><span class="pre">images</span></code> works really well:</p></li>
 </ul>
-<div class="section" id="add-figure">
+<section id="add-figure">
 <h2>Add Figure<a class="headerlink" href="#add-figure" title="Permalink to this headline">¶</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">![HOT](https://datadocs.bco-dmo.org/d2/images/logos/logo_HOT.jpg)</span></code></p>
 <p><img alt="HOT" src="https://datadocs.bco-dmo.org/d2/images/logos/logo_HOT.jpg" /></p>
-</div>
-<div class="section" id="edit-figure">
+</section>
+<section id="edit-figure">
 <h2>Edit Figure<a class="headerlink" href="#edit-figure" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    ```{image} _build/html/_images/logo_HOT.jpg
     :alt: HOT-2
@@ -54,8 +55,8 @@
 </pre></div>
 </div>
 <a class="bg-primary reference internal image-reference" href="_images/logo_HOT.jpg"><img alt="HOT-2" class="bg-primary align-center" src="_images/logo_HOT.jpg" style="width: 200px;" /></a>
-</div>
-<div class="section" id="edit-figure-2">
+</section>
+<section id="edit-figure-2">
 <h2>Edit Figure -2<a class="headerlink" href="#edit-figure-2" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">:::{</span><span class="n">figure</span><span class="o">-</span><span class="n">md</span><span class="p">}</span> <span class="n">logo</span><span class="o">-</span><span class="n">target</span>
 <span class="p">:</span><span class="n">class</span><span class="p">:</span> <span class="n">myclass</span>
@@ -66,12 +67,14 @@
 <span class="p">:::</span>
 </pre></div>
 </div>
-<div class="myclass figure align-default" id="logo-target">
+<figure class="myclass align-default" id="logo-target">
 <a class="bg-primary reference internal image-reference" href="_images/logo_HOT.jpg"><img alt="HOT-2" class="bg-primary" src="_images/logo_HOT.jpg" style="width: 300px;" /></a>
-<p class="caption"><span class="caption-text">Hawaii Ocean Time-Series <em>University of Hawaii</em>.</span><a class="headerlink" href="#logo-target" title="Permalink to this image">¶</a></p>
-</div>
-</div>
-<div class="section" id="warnings">
+<figcaption>
+<p><span class="caption-text">Hawaii Ocean Time-Series <em>University of Hawaii</em>.</span><a class="headerlink" href="#logo-target" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="warnings">
 <h2>Warnings<a class="headerlink" href="#warnings" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-markdown notranslate"><div class="highlight"><pre><span></span>:::{warning}
 Testing this warning.
@@ -89,8 +92,8 @@ Testing this warning.
 <li><p>Careful, I am watching you =)</p></li>
 </ul>
 </div>
-</div>
-<div class="section" id="linking">
+</section>
+<section id="linking">
 <h2>Linking<a class="headerlink" href="#linking" title="Permalink to this headline">¶</a></h2>
 <ul>
 <li><p>Do the following to change the link title automatically.</p>
@@ -100,7 +103,7 @@ Testing this warning.
 <p>Add this line to test linking <a class="reference internal" href="#"><span class="doc std std-doc">Markdown Tips</span></a></p>
 </li>
 </ul>
-<div class="section" id="heading-and-role">
+<section id="heading-and-role">
 <span id="heading-role"></span><h3>Heading and Role<a class="headerlink" href="#heading-and-role" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>```
 (heading-role)=
@@ -111,9 +114,9 @@ Testing this warning.
 <ul class="simple">
 <li><p>Now you can type <code class="docutils literal notranslate"><span class="pre">{ref}`heading-role`</span></code> to see <a class="reference internal" href="#heading-role"><span class="std std-ref">Heading and Role</span></a></p></li>
 </ul>
-</div>
-</div>
-<div class="section" id="documenting-code">
+</section>
+</section>
+<section id="documenting-code">
 <h2>Documenting Code<a class="headerlink" href="#documenting-code" title="Permalink to this headline">¶</a></h2>
 <ul>
 <li><p>Include your code from a file with lines emphasized</p>
@@ -174,8 +177,8 @@ Testing this warning.
 </div></blockquote>
 </li>
 </ul>
-</div>
-<div class="section" id="referencing-symbols">
+</section>
+<section id="referencing-symbols">
 <h2>Referencing Symbols<a class="headerlink" href="#referencing-symbols" title="Permalink to this headline">¶</a></h2>
 <ul>
 <li><p>Example-1 , we can us <code class="docutils literal notranslate"><span class="pre">MyST</span></code> extended markdown syntax:</p>
@@ -197,11 +200,11 @@ Testing this warning.
 <p>As we can see in <a class="reference internal" href="#my_api.MyDemo" title="my_api.MyDemo"><code class="xref py py-class docutils literal notranslate"><span class="pre">TESTING!</span></code></a>, this is nice!</p>
 </li>
 </ul>
-</div>
-<div class="section" id="linking-between-sites-with-intersphinx">
+</section>
+<section id="linking-between-sites-with-intersphinx">
 <h2>Linking Between Sites with Intersphinx<a class="headerlink" href="#linking-between-sites-with-intersphinx" title="Permalink to this headline">¶</a></h2>
-</div>
-</div>
+</section>
+</section>
 
 
           </div>

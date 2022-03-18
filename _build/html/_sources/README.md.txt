@@ -222,23 +222,24 @@
 
 12. Clean up
 
-    + Rename `index.rst`
+    + Convert `index.rst` to `index.md` 
     
-        ```shell script
-        mv index.rst index.md
-        ```
+    + Edit the current `index.md` text to:
     
-    + convert the text to:
-    
-        `````markdown
-        # Testing our First Sphinx Homepage
+        ````markdown
+        # Test 
 
-        Welcome to the future.
+        Welcome to my testing.
+
+        Testing this thing {ref}`logo-target`
+
+        Add this line to test linking [](markdown_tips.md)
 
         ```{toctree}
         :maxdepth: 2
         :caption: "Contents:"
-           
+
+        README
         markdown_tips
         ```
         ````
@@ -417,3 +418,4 @@
         ```markdown 
         As we can see in {py:class}`TESTING!<my_api.MyDemo`, this is nice!
         ```
+      

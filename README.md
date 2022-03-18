@@ -224,16 +224,6 @@
 
     + Convert `index.rst` to `index.md` 
     
-        ```shell script
-        # install the following 
-        python -m pip install "rst-to-myst[sphinx]" 
-        
-        # convert all `.rst files to .md'   
-        rst2myst convert ../sphinx-fcp/**/*.rst  
-      
-        # Now you can delete the .rst files! 
-        ```
-    
     + Edit the current `index.md` text to:
     
         ````markdown
@@ -429,4 +419,3 @@
         As we can see in {py:class}`TESTING!<my_api.MyDemo`, this is nice!
         ```
       
- 

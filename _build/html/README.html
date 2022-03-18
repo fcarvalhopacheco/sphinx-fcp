@@ -4,7 +4,8 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Sphinx and Markdown training &#8212; myfirst-sphinx  documentation</title>
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="_static/alabaster.css" />
@@ -32,14 +33,14 @@
 
           <div class="body" role="main">
             
-  <div class="section" id="sphinx-and-markdown-training">
+  <section id="sphinx-and-markdown-training">
 <h1>Sphinx and Markdown training<a class="headerlink" href="#sphinx-and-markdown-training" title="Permalink to this headline">¶</a></h1>
 <p><a class="reference external" href="https://training.talkpython.fm/courses/details/static-sites-with-sphinx-and-markdown">Reference: talkpython</a></p>
 <blockquote>
 <div><p>Static Website with Sphinx and Markdown
 I am using macOS Big Sur 11.6</p>
 </div></blockquote>
-<div class="section" id="setup">
+<section id="setup">
 <h2>1. Setup<a class="headerlink" href="#setup" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic">
 <li><p>Create a new project folder</p>
@@ -260,31 +261,31 @@ Welcome to the future?.
 </li>
 <li><p>Clean up</p>
 <ul>
-<li><p>Rename <code class="docutils literal notranslate"><span class="pre">index.rst</span></code></p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>mv index.rst index.md
-</pre></div>
-</div>
-</li>
-<li><p>convert the text to:</p>
-<div class="highlight-markdown notranslate"><div class="highlight"><pre><span></span><span class="gh"># Testing our First Sphinx Homepage</span>
+<li><p>Convert <code class="docutils literal notranslate"><span class="pre">index.rst</span></code> to <code class="docutils literal notranslate"><span class="pre">index.md</span></code></p></li>
+<li><p>Edit the current <code class="docutils literal notranslate"><span class="pre">index.md</span></code> text to:</p>
+<div class="highlight-markdown notranslate"><div class="highlight"><pre><span></span><span class="gh"># Test </span>
 
-Welcome to the future.
+Welcome to my testing.
+
+Testing this thing {ref}`logo-target`
+
+Add this line to test linking [](markdown_tips.md)
 
 ```{toctree}
 :maxdepth: 2
 :caption: &quot;Contents:&quot;
-   
+
+README
 markdown_tips
 ```
-````
 </pre></div>
 </div>
 </li>
 </ul>
 </li>
 </ol>
-</div>
-<div class="section" id="markdown-tips">
+</section>
+<section id="markdown-tips">
 <h2>2. Markdown TIPS:<a class="headerlink" href="#markdown-tips" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic">
 <li><p>How to display  images:</p>
@@ -366,8 +367,8 @@ Testing this warning.
 </div></blockquote>
 </li>
 </ol>
-</div>
-<div class="section" id="documenting-your-code">
+</section>
+<section id="documenting-your-code">
 <h2>3. Documenting your Code<a class="headerlink" href="#documenting-your-code" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic">
 <li><p>Literalinclude</p>
@@ -456,8 +457,8 @@ markdown syntax.</p></li>
 </ul>
 </li>
 </ol>
-</div>
-</div>
+</section>
+</section>
 
 
           </div>
