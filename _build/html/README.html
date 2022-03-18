@@ -31,6 +31,7 @@
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="_static/sphinx-book-theme.9d8b4a8b9bb19db25eeaddc40d639ba2.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -496,30 +497,10 @@ doing the following:</p>
 <ol class="arabic simple" start="14">
 <li><p>Jupyter Notebooks</p></li>
 </ol>
-<ul>
+<ul class="simple">
 <li><p>You can generate a documentation from jupyter notebooks.</p>
-<ol class="arabic">
-<li><p>Create a <code class="docutils literal notranslate"><span class="pre">notebooks</span></code> folder and create/use a <code class="docutils literal notranslate"><span class="pre">.ipynb</span></code> file:</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>mkdir notebooks
-touch jupyter_tutorial.ipynb
-</pre></div>
-</div>
-</li>
-<li><p>Edit you <code class="docutils literal notranslate"><span class="pre">jupyter_tutorial.ipynb</span></code> file</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">say_hello</span><span class="p">(</span><span class="n">recipient</span><span class="p">):</span>
-    <span class="k">return</span> <span class="s1">&#39;Hello, </span><span class="si">{}</span><span class="s1">!&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">recipient</span><span class="p">)</span>
-
-<span class="n">say_hello</span><span class="p">(</span><span class="s1">&#39;Hi&#39;</span><span class="p">)</span> 
-</pre></div>
-</div>
-</li>
-<li><p>Install <code class="docutils literal notranslate"><span class="pre">nbsphinx</span></code> packages</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>python3 -m pip install nbsphinx
-</pre></div>
-</div>
-</li>
-<li><p>Add the <code class="docutils literal notranslate"><span class="pre">nbsphinx</span></code> extension on your <code class="docutils literal notranslate"><span class="pre">conf.py</span></code> file</p></li>
-<li><p>Add <code class="docutils literal notranslate"><span class="pre">juputer_tutorial.ipynb</span></code> on your <code class="docutils literal notranslate"><span class="pre">index.md</span></code></p></li>
+<ol class="arabic simple">
+<li><p>Create a <code class="docutils literal notranslate"><span class="pre">notebooks</span></code> folder and create/use a <code class="docutils literal notranslate"><span class="pre">.ipynb</span></code> file:</p></li>
 </ol>
 </li>
 </ul>

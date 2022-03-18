@@ -269,27 +269,7 @@
 
     1. Create a `notebooks` folder and create/use a `.ipynb` file:
   
-        ```shell script
-        mkdir notebooks
-        touch jupyter_tutorial.ipynb
-        ```
-  
-    2. Edit you `jupyter_tutorial.ipynb` file
  
-        ```python
-        def say_hello(recipient):
-            return 'Hello, {}!'.format(recipient)
-
-        say_hello('Hi') 
-        ```
-    3. Install `nbsphinx` packages
-        ```shell script
-        python3 -m pip install nbsphinx
-        ```
-    
-    4. Add the `nbsphinx` extension on your `conf.py` file 
-          
-    3. Add `juputer_tutorial.ipynb` on your `index.md`
  
 ## 2. Markdown TIPS:
 
