@@ -1,27 +1,21 @@
 # Markdown Tips
 
-We are cooking, baby! 
-
-We are **Testing** .
-
-+ Our `images` works really well:
-    
-## Add Figure
+## Add Figure-1
 
 `![HOT](https://datadocs.bco-dmo.org/d2/images/logos/logo_HOT.jpg)`
 
 ![HOT](https://datadocs.bco-dmo.org/d2/images/logos/logo_HOT.jpg)
 
-## Edit Figure
+## Edit Figure-2
     
+````
+```{image} _build/html/_images/logo_HOT.jpg
+:alt: HOT-2
+:class: bg-primary
+:width: 200px
+:align: center
 ```
-    ```{image} _build/html/_images/logo_HOT.jpg
-    :alt: HOT-2
-    :class: bg-primary
-    :width: 200px
-    :align: center
-    ```
-```
+````
 
 ```{image} _build/html/_images/logo_HOT.jpg
 :alt: HOT-2
@@ -30,7 +24,7 @@ We are **Testing** .
 :align: center
 ```
 
-## Edit Figure -2
+## Edit Figure-3
 
 ```
 :::{figure-md} logo-target
@@ -52,29 +46,102 @@ Hawaii Ocean Time-Series *University of Hawaii*.
 :::
 
 
-## Warnings
+## Alerts (Note, Tip, Important, Caution, Warning)
 
-```markdown
-:::{warning}
-Testing this warning.
-
-- Careful, I am watching you =)
-
+### Note
+        
+````markdown
+:::{note}
+Testing this NOTE.
 :::
+
+or 
+
+```{note}
+Testing this note.
 ```
+````
 
-Generates:
+:::{note}
+Testing this note.
+:::
+
+### Tip
+
+````markdown
+:::{tip}
+Testing this TIP.
+:::
+
+or 
+
+```{TIP}
+Testing this TIP.
+```
+````
+
+:::{TIP}
+Testing this TIP.
+:::
+    
+### Important 
+
+````markdown
+:::{important}
+Testing this is important.
+:::
+
+or 
+
+```{important}
+Testing this is important.
+```
+````
+
+:::{important}
+Testing this important.
+:::
+
+### Caution 
+
+````markdown
+:::{caution}
+Testing this caution.
+:::
+
+or 
+
+```{caution}
+Testing this caution.
+```
+````
+
+:::{caution}
+Testing this caution.
+:::
+
+### Warning 
+
+````markdown
+:::{warning}
+Testing this warning.
+:::
+
+or 
+
+```{warning}
+Testing this warning.
+```
+````
 
 :::{warning}
 Testing this warning.
-
-- Careful, I am watching you =)
-
 :::
-
+    
+    
 ## Linking
 
-+  Do the following to change the link title automatically. 
+1.  Do the following to change the link title automatically. 
 
     ```markdown
     Add this line to test linking [](markdown_tips.md)
@@ -85,29 +152,31 @@ Testing this warning.
 (heading-role)=
 ### Heading and Role 
     
-    ```
-    (heading-role)=
-    ### Heading and Role
-    ```
-+ Now you can type ``` {ref}`heading-role` ``` to see {ref}`heading-role`
+```
+(heading-role)=
+### Heading and Role
+```
 
+```{note}
+Now you can type ``` {ref}`heading-role` ``` to see {ref}`heading-role`
+```
 
 ## Documenting Code 
 
-+ Include your code from a file with lines emphasized
+1. Include your code from a file with lines emphasized
 
     ````markdown 
     ```{literalinclude} run_livereload.py
     :emphasize-lines: 2-3
     ``` 
      ````
-+ The a above code generates the following:
+2. The a above code generates the following:
 
     ```{literalinclude} run_livereload.py
     :emphasize-lines: 2-3
     ```
   
-+ Documenting a Module: 
+3. Documenting a Module: 
      
     ````markdown
     ```{eval-rst}
@@ -121,25 +190,28 @@ Testing this warning.
     .. autoclass:: my_api.MyDemo
       :members:
     ```
-    > This is visually nice! Also, it's semantically rich.
     
+    ```{note}
+    This is visually nice! Also, it's semantically rich.
+    ```
+
 ## Referencing Symbols
  
-+ Example-1 , we can us `MyST` extended markdown syntax:
+1. First example , we can us `MyST` extended markdown syntax:
 
     ```markdown
     As we can see in [This is my_api.md](my_api.MyDemo), this is nice!
     ```
     As we can see in [This is my_api.md](my_api.MyDemo), this is nice!
 
-+ Example-2, we can also use `role-base` syntax:
+2. Second example, we can also use `role-base` syntax:
 
     ```markdown
     As we can see in {py:class}`my_api.MyDemo`, this is nice!
     ```
     As we can see in {py:class}`my_api.MyDemo`, this is nice!
     
-+ Example-3, provide your own text:
+3. Third, provide your own text:
 
     ```markdown 
     As we can see in {py:class}`TESTING!<my_api.MyDemo`, this is nice!

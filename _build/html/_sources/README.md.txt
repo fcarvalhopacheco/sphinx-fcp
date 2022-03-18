@@ -270,7 +270,8 @@
         :align: center
         ```
         ````
-    > You will notice that the image is now centered in the page
+        ```{tip``` 
+         You will notice that the image is now centered in the page
 
 4. Add/Enable some MyST extensions.
 
@@ -324,7 +325,12 @@
     (heading-role)=
     ### Heading and Role
     ```
-    > Now you can type ``` {ref}`heading-role` ``` to see {ref}`heading-role`
+    
+    ```{tip}
+    Now you can type ``` {ref}`heading-role` ``` to see {ref}`heading-role`
+    ```
+
+
 
 ## 3. Documenting your Code
  
