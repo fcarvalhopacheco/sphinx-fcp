@@ -166,8 +166,10 @@
 10. Add Markdown
 
     + Install MyST - Markedly Structured Text
-        >   Allows you to write sphinx documentation entirely in markdown.
-    
+        ```{tip}
+        Allows you to write sphinx documentation entirely in markdown.
+        ```
+      
         ```shell script
         $conda install -c conda-forge myst-parser
         ```
