@@ -46,7 +46,7 @@ Hawaii Ocean Time-Series *University of Hawaii*.
 :::
 
 
-## Alerts (Note, Tip, Important, Caution, Warning)
+## Alerts (Note, Tip, Important, Caution, Warning, See also)
 
 ### Note
         
@@ -137,7 +137,24 @@ Testing this warning.
 :::{warning}
 Testing this warning.
 :::
-    
+
+
+        
+````markdown
+:::{seealso}
+Testing this see also.
+:::
+
+or 
+
+```{seealso}
+Testing this seealso.
+```
+````
+
+:::{seealso}
+Testing this seealso.
+::: 
     
 ## Linking
 

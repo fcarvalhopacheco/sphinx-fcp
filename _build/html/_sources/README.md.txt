@@ -166,8 +166,8 @@
 10. Add Markdown
 
     + Install MyST - Markedly Structured Text
-        ```{tip}
-        Allows you to write sphinx documentation entirely in markdown.
+        ```{note}
+        This allows you to write sphinx documentation entirely in markdown.
         ```
       
         ```shell script
@@ -245,6 +245,51 @@
         markdown_tips
         ```
         ````
+
+13. Themes
+
++ Check [Sphinx-Themes](https://sphinx-themes.org).Then, choose one of the examples and follow their installation guide.
++ Example:
+    - If you chose [Sphinx-rtd-theme](https://sphinx-themes.org/sample-sites/sphinx-rtd-theme/), you can install it by 
+    doing the following:
+    
+        1. Install the theme
+            ```shell script
+            python -m pip install sphinx-book-theme 
+            ```
+      
+        2. Edit `conf.py` file with the following:
+            ```python
+            html_theme = 'sphinx_rtd_theme'
+            ```
+
+14. Jupyter Notebooks
+
++ You can generate a documentation from jupyter notebooks.
+
+    1. Create a `notebooks` folder and create/use a `.ipynb` file:
+  
+        ```shell script
+        mkdir notebooks
+        touch jupyter_tutorial.ipynb
+        ```
+  
+    2. Edit you `jupyter_tutorial.ipynb` file
+ 
+        ```python
+        def say_hello(recipient):
+            return 'Hello, {}!'.format(recipient)
+
+        say_hello('Hi') 
+        ```
+    3. Install `nbsphinx` packages
+        ```shell script
+        python3 -m pip install nbsphinx
+        ```
+    
+    4. Add the `nbsphinx` extension on your `conf.py` file 
+          
+    3. Add `juputer_tutorial.ipynb` on your `index.md`
  
 ## 2. Markdown TIPS:
 
@@ -426,4 +471,6 @@
         ```markdown 
         As we can see in {py:class}`TESTING!<my_api.MyDemo`, this is nice!
         ```
-      
+
+4. 
+
