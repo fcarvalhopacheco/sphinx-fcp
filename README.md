@@ -222,23 +222,34 @@
 
 12. Clean up
 
-    + Rename `index.rst`
+    + Convert `index.rst` to `index.md` 
     
         ```shell script
-        mv index.rst index.md
+        # install the following 
+        python -m pip install "rst-to-myst[sphinx]" 
+        
+        # convert all `.rst files to .md'   
+        rst2myst convert ../sphinx-fcp/**/*.rst  
+      
+        # Now you can delete the .rst files! 
         ```
     
-    + convert the text to:
+    + Edit the current `index.md` text to:
     
-        `````markdown
-        # Testing our First Sphinx Homepage
+        ````markdown
+        # Test 
 
-        Welcome to the future.
+        Welcome to my testing.
+
+        Testing this thing {ref}`logo-target`
+
+        Add this line to test linking [](markdown_tips.md)
 
         ```{toctree}
         :maxdepth: 2
         :caption: "Contents:"
-           
+
+        README
         markdown_tips
         ```
         ````
