@@ -222,55 +222,74 @@
   <div class="section" id="sphinx-and-markdown-training">
 <h1>Sphinx and Markdown training<a class="headerlink" href="#sphinx-and-markdown-training" title="Permalink to this headline">¶</a></h1>
 <p><a class="reference external" href="https://training.talkpython.fm/courses/details/static-sites-with-sphinx-and-markdown">Reference: talkpython</a></p>
-<blockquote>
-<div><p>Static Website with Sphinx and Markdown
-I am using macOS Big Sur 11.6</p>
-</div></blockquote>
+<p>Static Website with Sphinx and Markdown</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>I am using macOS Big Sur 11.6</p>
+</div>
 <div class="section" id="setup">
 <h2>1. Setup<a class="headerlink" href="#setup" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic">
-<li><p>Create a new project folder</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nv">$mkdir</span> /Users/fcp/workspace/1.git/sphinx-fcp
-<span class="nv">$cd</span>  /Users/fcp/workspace/1.git/sphinx-fcp
+<li><p>On your terminal, create a new project folder:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>mkdir /Users/fcp/workspace/1.git/sphinx-fcp
+<span class="nb">cd</span>  /Users/fcp/workspace/1.git/sphinx-fcp
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Replace <code class="docutils literal notranslate"><span class="pre">/Users/fcp/workspace/1.git/sphinx-fcp</span></code> with your own <code class="docutils literal notranslate"><span class="pre">path</span></code> and folder name</p>
+</div>
+</li>
+<li><p>Create the following local environment:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>conda create --prefix ./.env <span class="nv">python</span><span class="o">=</span><span class="m">3</span>.10 <span class="nv">sphinx</span><span class="o">=</span><span class="m">4</span>.4.0 sphinx-autobuild<span class="o">=</span><span class="m">2021</span>.3.14 myst-parser<span class="o">=</span><span class="m">0</span>.17.0 sphinx-autodoc-typehints<span class="o">=</span><span class="m">1</span>.12.0 <span class="nv">nbsphinx</span><span class="o">=</span><span class="m">0</span>.8.8 sphinx-book-theme<span class="o">=</span><span class="m">0</span>.2.0
+</pre></div>
+</div>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>For more about the packages, please check:</p>
+<p><a class="reference external" href="https://sphinx-book-theme.readthedocs.io/en/stable/">sphinx</a></p>
+<p><a class="reference external" href="https://github.com/executablebooks/sphinx-autobuild">sphinx-autobuild</a></p>
+<p><a class="reference external" href="https://github.com/executablebooks/MyST-Parser">myst-parser</a></p>
+<p><a class="reference external" href="https://github.com/tox-dev/sphinx-autodoc-typehints">sphinx-autodoc-typehints</a></p>
+<p><a class="reference external" href="https://nbsphinx.readthedocs.io/en/0.8.8/">nbsphinx</a></p>
+<p><a class="reference external" href="https://sphinx-book-theme.readthedocs.io/en/stable/">sphinx-book-theme</a></p>
+</div>
+</li>
+<li><p>When conda asks you to proceed, type <code class="docutils literal notranslate"><span class="pre">y</span></code>:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>proceed <span class="o">([</span>y<span class="o">]</span>/n<span class="o">)</span>?
+</pre></div>
+</div>
+<p>This creates the .env/ environment on your selected <code class="docutils literal notranslate"><span class="pre">path</span></code> with the above packages with <code class="docutils literal notranslate"><span class="pre">python=3.10</span></code> version.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Install all the programs that you want in this environment at the same time.
+Installing 1 program at a time can lead to dependency conflicts. <strong>I learned the hard way :/</strong></p>
+</div>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>Check more tips <a class="reference external" href="https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html"><strong>here</strong></a></p>
+</div>
+</li>
+<li><p>Activate your environment created with the prefix <code class="docutils literal notranslate"><span class="pre">.env/</span></code> :</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>conda acvtivate .env/
 </pre></div>
 </div>
 </li>
-<li><p>Create a python environment with <code class="docutils literal notranslate"><span class="pre">CONDA</span></code></p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nv">$conda</span> create --prefix ./.env python
-
-<span class="c1"># activate </span>
-<span class="nv">$conda</span> acvtivate .env/
-
-<span class="c1">#update pip</span>
-<span class="nv">$conda</span> update pip
+<li><p>Check Sphinx installation:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>which sphinx-quickstart
 </pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For me: <code class="docutils literal notranslate"><span class="pre">/Users/fcp/workspace/1.git/sphinx-fcp/.env/bin/sphinx-quickstart</span></code></p>
 </div>
 </li>
-<li><p>Installing Sphinx</p>
-<ul class="simple">
-<li><p>See all Sphinx installations <a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/installation.html">HERE</a></p></li>
-</ul>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nv">$conda</span> install sphinx
+<li><p>Make a Sphinx website using our downloaded theme <code class="docutils literal notranslate"><span class="pre">sphinx-book-theme</span></code>:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>sphinx-quickstart
 </pre></div>
 </div>
-</li>
-<li><p>Check Sphinx installation</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nv">$which</span> sphinx-quickstart
-</pre></div>
-</div>
-<blockquote>
-<div><p>For me: <code class="docutils literal notranslate"><span class="pre">/Users/fcp/workspace/1.git/sphinx-fcp/.env/bin/sphinx-quickstart</span></code></p>
-</div></blockquote>
-</li>
-<li><p>Make a Sphinx Site</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="c1"># On your project folder, `/Users/fcp/workspace/1.git/sphinx-fcp`, type:</span>
-
-<span class="nv">$sphinx</span>-quickstart
-</pre></div>
-</div>
-<ul class="simple">
-<li><p>Answer the following questions</p></li>
-</ul>
+<ul>
+<li><p>Answer the following questions</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>&gt; Separate <span class="nb">source</span> and build directories <span class="o">(</span>y/n<span class="o">)</span> <span class="o">[</span>n<span class="o">]</span>: n
 
 The project name will occur <span class="k">in</span> several places <span class="k">in</span> the built documentation.
@@ -294,10 +313,9 @@ Creating file /Users/fcp/workspace/1.git/sphinx-fcp/make.bat.
 Finished: An initial directory structure has been created.
 </pre></div>
 </div>
-<ul class="simple">
-<li><p>This is the new tree of the project</p></li>
-</ul>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nv">$tree</span>                                                              
+</li>
+<li><p>This is the new tree of the project:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>tree                                                              
 
     ├── Makefile
     ├── README.md
@@ -316,48 +334,16 @@ Finished: An initial directory structure has been created.
 </pre></div>
 </div>
 </li>
-<li><p>Livereload</p>
-<blockquote>
-<div><p>LiveReload monitors changes in the file system. As soon as you save a file, it is preprocessed as needed,
-and the browser is refreshed.</p>
-</div></blockquote>
-<ul class="simple">
-<li><p>Install livereload:</p></li>
 </ul>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nv">$conda</span> install -c conda-forge livereload    
-</pre></div>
-</div>
-<ul class="simple">
-<li><p>Create a python file to run livereload</p></li>
-</ul>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nv">$touch</span> run_livereload
-</pre></div>
-</div>
-<ul class="simple">
-<li><p>Edit <code class="docutils literal notranslate"><span class="pre">run_livereload.py</span></code> with the following:</p></li>
-</ul>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">livereload</span> <span class="kn">import</span> <span class="n">Server</span><span class="p">,</span> <span class="n">shell</span>
-
-<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
-<span class="n">server</span> <span class="o">=</span> <span class="n">Server</span><span class="p">()</span>
-<span class="n">server</span><span class="o">.</span><span class="n">watch</span><span class="p">(</span><span class="s1">&#39;*.rst&#39;</span><span class="p">,</span> <span class="n">shell</span><span class="p">(</span><span class="s1">&#39;make html&#39;</span><span class="p">),</span> <span class="n">delay</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-<span class="n">server</span><span class="o">.</span><span class="n">watch</span><span class="p">(</span><span class="s1">&#39;*.md&#39;</span><span class="p">,</span> <span class="n">shell</span><span class="p">(</span><span class="s1">&#39;make html&#39;</span><span class="p">),</span> <span class="n">delay</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-<span class="n">server</span><span class="o">.</span><span class="n">watch</span><span class="p">(</span><span class="s1">&#39;*.py&#39;</span><span class="p">,</span> <span class="n">shell</span><span class="p">(</span><span class="s1">&#39;make html&#39;</span><span class="p">),</span> <span class="n">delay</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-<span class="n">server</span><span class="o">.</span><span class="n">watch</span><span class="p">(</span><span class="s1">&#39;_static/*&#39;</span><span class="p">,</span> <span class="n">shell</span><span class="p">(</span><span class="s1">&#39;make html&#39;</span><span class="p">),</span> <span class="n">delay</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-<span class="n">server</span><span class="o">.</span><span class="n">watch</span><span class="p">(</span><span class="s1">&#39;_templates/*&#39;</span><span class="p">,</span> <span class="n">shell</span><span class="p">(</span><span class="s1">&#39;make html&#39;</span><span class="p">),</span> <span class="n">delay</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-<span class="n">server</span><span class="o">.</span><span class="n">serve</span><span class="p">(</span><span class="n">root</span><span class="o">=</span><span class="s1">&#39;_build/html&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
 </li>
-<li><p>Add <code class="docutils literal notranslate"><span class="pre">.env/</span></code> folder to <code class="docutils literal notranslate"><span class="pre">conf.py</span></code>.</p>
+<li><p>Add <code class="docutils literal notranslate"><span class="pre">.env/</span></code> folder to <code class="docutils literal notranslate"><span class="pre">conf.py</span></code>:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">exclude_patterns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;_build&#39;</span><span class="p">,</span> <span class="s1">&#39;Thumbs.db&#39;</span><span class="p">,</span> <span class="s1">&#39;.DS_Store&#39;</span><span class="p">,</span><span class="s1">&#39;.env&#39;</span><span class="p">]</span>
 </pre></div>
 </div>
 </li>
-<li><p>Render the documentation as HTML for the first time</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nv">$sphinx</span>-build -b html ../sphinx-fcp _build/html  
+<li><p>Render the documentation as HTML for the first time:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>sphinx-build -b html ../sphinx-fcp _build/html  
 
-<span class="c1"># you should see</span>
 Running Sphinx v4.4.0
 making output directory... <span class="k">done</span>
 building <span class="o">[</span>mo<span class="o">]</span>: targets <span class="k">for</span> <span class="m">0</span> po files that are out of date
@@ -381,23 +367,18 @@ The HTML pages are <span class="k">in</span> _build/html.
 </pre></div>
 </div>
 </li>
-<li><p>Testing the installation</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ python ./run_livereload.py
-<span class="c1"># go to http://127.0.0.1:5500, and check the website </span>
+<li><p>Start the website and start tracking changes:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>sphinx-autobuild ../sphinx-fcp _build/html    
 </pre></div>
 </div>
-</li>
-<li><p>Add Markdown</p>
-<ul>
-<li><p>Install MyST - Markedly Structured Text</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>This allows you to write sphinx documentation entirely in markdown.</p>
-</div>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nv">$conda</span> install -c conda-forge myst-parser
-</pre></div>
+<p>This will start a server at <a class="reference external" href="http://127.0.0.1:8000/">http://127.0.0.1:8000/</a> and start watching for changes
+in the <code class="docutils literal notranslate"><span class="pre">~/sphinx-fcp</span></code> directory</p>
 </div>
 </li>
+<li><p>Add Markdown:</p>
+<ul>
 <li><p>open <code class="docutils literal notranslate"><span class="pre">conf.py</span></code>, and add the following:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">extensions</span> <span class="o">=</span> <span class="p">[</span>
     <span class="s2">&quot;myst_parser&quot;</span><span class="p">,</span>
@@ -407,10 +388,10 @@ The HTML pages are <span class="k">in</span> _build/html.
 </li>
 </ul>
 </li>
-<li><p>Testing the markdown file</p>
+<li><p>Play with Markdown:</p>
 <ul>
 <li><p>Create the following</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nv">$touch</span> markdown_tips.md
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>touch markdown_tips.md
 </pre></div>
 </div>
 </li>
@@ -430,7 +411,7 @@ The HTML pages are <span class="k">in</span> _build/html.
 </pre></div>
 </div>
 </li>
-<li><p>add <code class="docutils literal notranslate"><span class="pre">markdown_tips.md</span></code> to <code class="docutils literal notranslate"><span class="pre">index.rst</span></code></p>
+<li><p>add <code class="docutils literal notranslate"><span class="pre">markdown_tips.md</span></code> to <code class="docutils literal notranslate"><span class="pre">index.rst</span></code>:</p>
 <div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="gh">TEST PAGE!</span>
 <span class="gh">=====================</span>
 
@@ -446,7 +427,7 @@ Welcome to the future?.
 </li>
 </ul>
 </li>
-<li><p>Clean up</p>
+<li><p>Clean up:</p>
 <ul>
 <li><p>Convert <code class="docutils literal notranslate"><span class="pre">index.rst</span></code> to <code class="docutils literal notranslate"><span class="pre">index.md</span></code></p></li>
 <li><p>Edit the current <code class="docutils literal notranslate"><span class="pre">index.md</span></code> text to:</p>
@@ -470,17 +451,17 @@ markdown_tips
 </li>
 </ul>
 </li>
-<li><p>Themes</p></li>
+<li><p>Other themes:</p></li>
 </ol>
 <ul>
-<li><p>Check <a class="reference external" href="https://sphinx-themes.org">Sphinx-Themes</a>.Then, choose one of the examples and follow their installation guide.</p></li>
+<li><p>Check <a class="reference external" href="https://sphinx-themes.org">Sphinx-Themes</a>. Then, choose one of the examples and follow their installation guide.</p></li>
 <li><p>Example:</p>
 <ul>
-<li><p>If you chose <a class="reference external" href="https://sphinx-themes.org/sample-sites/sphinx-rtd-theme/">Sphinx-rtd-theme</a>, you can install it by
+<li><p>If choose <a class="reference external" href="https://sphinx-themes.org/sample-sites/sphinx-rtd-theme/">Sphinx-rtd-theme</a>, you can install it by
 doing the following:</p>
 <ol class="arabic">
 <li><p>Install the theme</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>python -m pip install sphinx-book-theme 
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>python -m pip install sphinx-rtd-theme 
 </pre></div>
 </div>
 </li>
@@ -490,20 +471,23 @@ doing the following:</p>
 </div>
 </li>
 </ol>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p><strong>Last reminder!</strong></p>
+<p>Install all the programs that you want in this environment at the same time.
+Installing 1 program at a time can lead to dependency conflicts.</p>
+</div>
 </li>
 </ul>
 </li>
 </ul>
-<ol class="arabic simple" start="14">
-<li><p>Jupyter Notebooks</p></li>
-</ol>
+<ol class="arabic simple" start="13">
+<li><p>Jupyter Notebooks</p>
 <ul class="simple">
-<li><p>You can generate a documentation from jupyter notebooks.</p>
-<ol class="arabic simple">
-<li><p>Create a <code class="docutils literal notranslate"><span class="pre">notebooks</span></code> folder and create/use a <code class="docutils literal notranslate"><span class="pre">.ipynb</span></code> file:</p></li>
-</ol>
-</li>
+<li><p>Find jupyter notebook tutorial</p></li>
 </ul>
+</li>
+</ol>
 </div>
 <div class="section" id="markdown-tips">
 <h2>2. Markdown TIPS:<a class="headerlink" href="#markdown-tips" title="Permalink to this headline">¶</a></h2>
@@ -635,13 +619,6 @@ parse reStructuredText. This is incompatible with our MyST extension. However, w
 </div>
 </li>
 </ul>
-</li>
-<li><p>Install the <code class="docutils literal notranslate"><span class="pre">sphinx-autodoc-typehints</span></code> and also enable <a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/extensions/napoleon.html"><code class="docutils literal notranslate"><span class="pre">sphinx.ext.napoleon</span></code></a>.
-These is to teach Sphinx to interpret the docstring and typehints.</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="c1"># use the module flag -m with python so that it uses the conda python for the installation</span>
-python -m pip install sphinx-autodoc-typehints        
-</pre></div>
-</div>
 </li>
 <li><p>Next, edit your <code class="docutils literal notranslate"><span class="pre">conf.py</span></code> to enable both Sphinx extensions</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">extensions</span> <span class="o">=</span> <span class="p">[</span>

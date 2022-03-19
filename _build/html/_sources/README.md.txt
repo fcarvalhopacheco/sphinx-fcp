@@ -2,138 +2,138 @@
 
 [Reference: talkpython](https://training.talkpython.fm/courses/details/static-sites-with-sphinx-and-markdown)
 
-> Static Website with Sphinx and Markdown
-> I am using macOS Big Sur 11.6
+Static Website with Sphinx and Markdown
+
+```{important}
+I am using macOS Big Sur 11.6
+```
 
 ## 1. Setup 
-1. Create a new project folder
+1. On your terminal, create a new project folder:
 
     ```shell script
-    $mkdir /Users/fcp/workspace/1.git/sphinx-fcp
-    $cd  /Users/fcp/workspace/1.git/sphinx-fcp
+    mkdir /Users/fcp/workspace/1.git/sphinx-fcp
+    cd  /Users/fcp/workspace/1.git/sphinx-fcp
+    ```
+    ```{note}
+   Replace `/Users/fcp/workspace/1.git/sphinx-fcp` with your own `path` and folder name
+   ```
+
+2. Create the following local environment:
+
+    ```shell script
+    conda create --prefix ./.env python=3.10 sphinx=4.4.0 sphinx-autobuild=2021.3.14 myst-parser=0.17.0 sphinx-autodoc-typehints=1.12.0 nbsphinx=0.8.8 sphinx-book-theme=0.2.0
+    ````
+    
+    ```{seealso}
+    For more about the packages, please check: 
+    
+    [sphinx](https://sphinx-book-theme.readthedocs.io/en/stable/)
+   
+    [sphinx-autobuild](https://github.com/executablebooks/sphinx-autobuild)
+   
+    [myst-parser](https://github.com/executablebooks/MyST-Parser)
+   
+    [sphinx-autodoc-typehints](https://github.com/tox-dev/sphinx-autodoc-typehints)
+   
+    [nbsphinx](https://nbsphinx.readthedocs.io/en/0.8.8/)
+   
+    [sphinx-book-theme](https://sphinx-book-theme.readthedocs.io/en/stable/)
+    ```
+   
+2. When conda asks you to proceed, type `y`:    
+   
+    ```shell script
+    proceed ([y]/n)?
+    ```
+    This creates the .env/ environment on your selected `path` with the above packages with `python=3.10` version.
+
+    ```{tip}
+    Install all the programs that you want in this environment at the same time. 
+    Installing 1 program at a time can lead to dependency conflicts. **I learned the hard way :/**
+    ```
+   
+    ```{seealso}
+    Check more tips [**here**](https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html)
+    ```
+3. Activate your environment created with the prefix `.env/` :
+    
+    ```shell script
+    conda acvtivate .env/
     ```
 
-2. Create a python environment with `CONDA`
+4. Check Sphinx installation:
 
     ```shell script
-    $conda create --prefix ./.env python
-
-    # activate 
-    $conda acvtivate .env/
-
-    #update pip
-    $conda update pip
+    which sphinx-quickstart
     ```
-
-3. Installing Sphinx 
-
-    + See all Sphinx installations [HERE](https://www.sphinx-doc.org/en/master/usage/installation.html)
-
-    ```shell script
-    $conda install sphinx
+    ```{note}
+    For me: `/Users/fcp/workspace/1.git/sphinx-fcp/.env/bin/sphinx-quickstart`
     ```
-
-4. Check Sphinx installation
-
-    ```shell script
-    $which sphinx-quickstart
-    ```
-    > For me: `/Users/fcp/workspace/1.git/sphinx-fcp/.env/bin/sphinx-quickstart`
-
-5. Make a Sphinx Site
+5. Make a Sphinx website using our downloaded theme `sphinx-book-theme`:
 
     ```shell script
-    # On your project folder, `/Users/fcp/workspace/1.git/sphinx-fcp`, type:
-
-    $sphinx-quickstart
+    sphinx-quickstart
     ```
 
     + Answer the following questions
 
-    ```shell script
-    > Separate source and build directories (y/n) [n]: n
+        ```shell script
+        > Separate source and build directories (y/n) [n]: n
 
-    The project name will occur in several places in the built documentation.
-    > Project name: myfirst-sphinx
-    > Author name(s): Fernando Carvalho Pacheco <fernando.pacheco@hawaii.edu>
-    > Project release []:
+        The project name will occur in several places in the built documentation.
+        > Project name: myfirst-sphinx
+        > Author name(s): Fernando Carvalho Pacheco <fernando.pacheco@hawaii.edu>
+        > Project release []:
 
-    If the documents are to be written in a language other than English,
-    you can select a language here by its language code. Sphinx will then
-    translate text that it generates into that language.
+        If the documents are to be written in a language other than English,
+        you can select a language here by its language code. Sphinx will then
+        translate text that it generates into that language.
 
-    For a list of supported codes, see
-    https://www.sphinx-doc.org/en/master/usage/configuration.html#confval-language.
-    > Project language [en]:
+        For a list of supported codes, see
+        https://www.sphinx-doc.org/en/master/usage/configuration.html#confval-language.
+        > Project language [en]:
 
-    Creating file /Users/fcp/workspace/1.git/sphinx-fcp/conf.py.
-    Creating file /Users/fcp/workspace/1.git/sphinx-fcp/index.rst.
-    Creating file /Users/fcp/workspace/1.git/sphinx-fcp/Makefile.
-    Creating file /Users/fcp/workspace/1.git/sphinx-fcp/make.bat.
+        Creating file /Users/fcp/workspace/1.git/sphinx-fcp/conf.py.
+        Creating file /Users/fcp/workspace/1.git/sphinx-fcp/index.rst.
+        Creating file /Users/fcp/workspace/1.git/sphinx-fcp/Makefile.
+        Creating file /Users/fcp/workspace/1.git/sphinx-fcp/make.bat.
 
-    Finished: An initial directory structure has been created.
-    ```
+        Finished: An initial directory structure has been created.
+        ```
 
-    + This is the new tree of the project
+    + This is the new tree of the project:
 
-    ```shell script
-    $tree                                                              
+        ```shell script
+        tree                                                              
 
-        ├── Makefile
-        ├── README.md
-        ├── _build          -> An empty directory (for now) that will hold the rendered documentation.
-        ├── _static         -> An empty directory (custom site assets)
-        ├── _templates      -> An empty directory (custom templates)
-        ├── conf.py         -> A Python script holding the configuration of the Sphinx project. It contains the 
-        ├                      project name and release you specified to sphinx-quickstart, as well as some extra 
-        ├                      configuration keys.
-        ├
-        ├── index.rst       -> The root document of the project, which serves as welcome page and contains 
-        ├                     the root of the “table of contents tree” (or toctree).
-        ├ 
-        └── make.bat        -> Convenience scripts to simplify some common Sphinx operations, 
-                               such as rendering the content.
-    ```
-6. Livereload
-    > LiveReload monitors changes in the file system. As soon as you save a file, it is preprocessed as needed, 
-                 and the browser is refreshed.
-    + Install livereload:
-    
-    ```shell script
-    $conda install -c conda-forge livereload    
-    ```
-
-    + Create a python file to run livereload   
-    ```shell script
-    $touch run_livereload
-    ```
-    + Edit `run_livereload.py` with the following:
-    
-    ```python
-    from livereload import Server, shell
-
-    if __name__ == '__main__':
-    server = Server()
-    server.watch('*.rst', shell('make html'), delay=1)
-    server.watch('*.md', shell('make html'), delay=1)
-    server.watch('*.py', shell('make html'), delay=1)
-    server.watch('_static/*', shell('make html'), delay=1)
-    server.watch('_templates/*', shell('make html'), delay=1)
-    server.serve(root='_build/html')
-    ```
+            ├── Makefile
+            ├── README.md
+            ├── _build          -> An empty directory (for now) that will hold the rendered documentation.
+            ├── _static         -> An empty directory (custom site assets)
+            ├── _templates      -> An empty directory (custom templates)
+            ├── conf.py         -> A Python script holding the configuration of the Sphinx project. It contains the 
+            ├                      project name and release you specified to sphinx-quickstart, as well as some extra 
+            ├                      configuration keys.
+            ├
+            ├── index.rst       -> The root document of the project, which serves as welcome page and contains 
+            ├                     the root of the “table of contents tree” (or toctree).
+            ├ 
+            └── make.bat        -> Convenience scripts to simplify some common Sphinx operations, 
+                                   such as rendering the content.
+        ```
    
-7. Add `.env/` folder to `conf.py`.
+6. Add `.env/` folder to `conf.py`:
     
     ```python
     exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store','.env']
     ```
  
-8. Render the documentation as HTML for the first time
+7. Render the documentation as HTML for the first time:
  
     ```shell script
-    $sphinx-build -b html ../sphinx-fcp _build/html  
+    sphinx-build -b html ../sphinx-fcp _build/html  
     
-    # you should see
     Running Sphinx v4.4.0
     making output directory... done
     building [mo]: targets for 0 po files that are out of date
@@ -155,24 +155,18 @@
 
     The HTML pages are in _build/html.
     ```   
-   
-9. Testing the installation
+8. Start the website and start tracking changes:
 
     ```shell script
-    $ python ./run_livereload.py
-    # go to http://127.0.0.1:5500, and check the website 
+    sphinx-autobuild ../sphinx-fcp _build/html    
+    ```   
+    
+    ```{note} 
+    This will start a server at [http://127.0.0.1:8000/](http://127.0.0.1:8000/) and start watching for changes
+    in the `~/sphinx-fcp` directory
     ```
-   
-10. Add Markdown
-
-    + Install MyST - Markedly Structured Text
-        ```{note}
-        This allows you to write sphinx documentation entirely in markdown.
-        ```
-      
-        ```shell script
-        $conda install -c conda-forge myst-parser
-        ```
+    
+9. Add Markdown:
     
     + open `conf.py`, and add the following:
     
@@ -182,11 +176,11 @@
         ]
         ```
    
-11. Testing the markdown file
+10. Play with Markdown:
 
     + Create the following
         ```shell script
-        $touch markdown_tips.md
+        touch markdown_tips.md
         ```
     
     + Add the following:
@@ -206,7 +200,7 @@
         - Test4
         ```
 
-    + add `markdown_tips.md` to `index.rst`
+    + add `markdown_tips.md` to `index.rst`:
     
         ```rst
         TEST PAGE!
@@ -222,7 +216,7 @@
 
         ```     
 
-12. Clean up
+11. Clean up:
 
     + Convert `index.rst` to `index.md` 
     
@@ -246,16 +240,16 @@
         ```
         ````
 
-13. Themes
+12. Other themes:
 
-+ Check [Sphinx-Themes](https://sphinx-themes.org).Then, choose one of the examples and follow their installation guide.
++ Check [Sphinx-Themes](https://sphinx-themes.org). Then, choose one of the examples and follow their installation guide.
 + Example:
-    - If you chose [Sphinx-rtd-theme](https://sphinx-themes.org/sample-sites/sphinx-rtd-theme/), you can install it by 
+    - If choose [Sphinx-rtd-theme](https://sphinx-themes.org/sample-sites/sphinx-rtd-theme/), you can install it by 
     doing the following:
     
         1. Install the theme
             ```shell script
-            python -m pip install sphinx-book-theme 
+            python -m pip install sphinx-rtd-theme 
             ```
       
         2. Edit `conf.py` file with the following:
@@ -263,13 +257,14 @@
             html_theme = 'sphinx_rtd_theme'
             ```
 
-14. Jupyter Notebooks
-
-+ You can generate a documentation from jupyter notebooks.
-
-    1. Create a `notebooks` folder and create/use a `.ipynb` file:
-  
- 
+        ```{warning}
+        **Last reminder!**
+       
+        Install all the programs that you want in this environment at the same time. 
+        Installing 1 program at a time can lead to dependency conflicts. 
+        ```
+13. Jupyter Notebooks
+    - Find jupyter notebook tutorial
  
 ## 2. Markdown TIPS:
 
@@ -410,13 +405,6 @@
             ```
             ````
       
-    + Install the `sphinx-autodoc-typehints` and also enable [`sphinx.ext.napoleon`](https://www.sphinx-doc.org/en/master/usage/extensions/napoleon.html).
-    These is to teach Sphinx to interpret the docstring and typehints.
-   
-        ```shell script
-        # use the module flag -m with python so that it uses the conda python for the installation
-        python -m pip install sphinx-autodoc-typehints        
-        ``` 
       
     + Next, edit your `conf.py` to enable both Sphinx extensions
     
