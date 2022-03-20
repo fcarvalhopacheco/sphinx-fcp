@@ -464,7 +464,7 @@
         }
         myst_url_schemes = ["http", "https", ]
         ```
-2. Testing interphinx extenstion using CCHDO parameters: 
+2. Testing interphinx extention using CCHDO parameters: 
 
     + ```[](cchdo-website:oxygen)``` -> [](cchdo-website:oxygen)
     + ````{ref}`cchdo-website:parameters````--> {ref}`cchdo-website:parameters`
@@ -478,5 +478,23 @@
     [Auto-generated header anchors](https://myst-parser.readthedocs.io/en/v0.15.1/syntax/optional.html#auto-generated-header-anchors).
     ```
     ````
-    + You can use `[](#linking)` to see [](#linking)
-     
+    + You can use `[](#more-cross-referencing)` to see [](#more-cross-referencing)
+
+4. The Numbered reference role     
+
+   ````{important}
+    This requires setting ``numfig = True`` in your ``conf.py``,
+    ````
+
+    + The `numref` role is used to reference numbered elements of the documentation, such as tables and images.
+
+    ```{figure} _build/html/_images/kilo-moana.jpg
+    :scale: 40%
+    :align: center
+    :name: kilo-moana
+    
+    R/V Kilo Moana 
+    ```
+   
+   Now you can start referencing {numref}`kilo-moana` --> ``` {numref}`kilo-moana` ```
+   

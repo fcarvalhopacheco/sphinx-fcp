@@ -9,42 +9,23 @@
 ## Edit Figure-2
     
 ````
-```{image} _build/html/_images/logo_HOT.jpg
-:alt: HOT-2
+```{figure} _build/html/_images/logo_HOT.jpg
 :class: bg-primary
 :width: 200px
 :align: center
+:name: hot-logo
 ```
 ````
 
-```{image} _build/html/_images/logo_HOT.jpg
-:alt: HOT-2
+```{figure} _build/html/_images/logo_HOT.jpg
 :class: bg-primary
 :width: 200px
 :align: center
-```
-
-## Edit Figure-3
-
-```
-:::{figure-md} logo-target
-:class: myclass
-
-<img src="_build/html/_images/logo_HOT.jpg" alt="HOT-2" class="bg-primary" width="300px">
+:name: hot-logo
 
 Hawaii Ocean Time-Series *University of Hawaii*.
-:::
+
 ```
-
-
-:::{figure-md} logo-target
-:class: myclass
-
-<img src="_build/html/_images/logo_HOT.jpg" alt="HOT-2" class="bg-primary" width="300px">
-
-Hawaii Ocean Time-Series *University of Hawaii*.
-:::
-
 
 ## Alerts (Note, Tip, Important, Caution, Warning, See also)
 
@@ -239,15 +220,17 @@ Now you can type ``` {ref}`heading-role` ``` to see {ref}`heading-role`
 
 1. Testing interphinx and cross-referencing extension using CCHDO parameters: 
 
-    ```{important}
-    Make sure to activate `sphinx.ext.intersphinx` on your `conf.py` 
-    See details here: `
-    ```
+    ````{important}
+    -Make sure to activate `sphinx.ext.intersphinx` on your `conf.py` 
+    
+    -See details here:  FIX-ME #TODO
+    ````
+   
     - ```[](cchdo-website:oxygen)``` -> [](cchdo-website:oxygen)
     - ````{ref}`cchdo-website:parameters````--> {ref}`cchdo-website:parameters`
     - ````{ref}`cchdo-website:Bottle Quality Codes```` -->  {ref}`cchdo-website:Bottle Quality Codes`
 
-3. Implicit Targets
+2. Implicit Targets
 
     ````{important}
     This requires setting ``myst_heading_anchors = 2`` in your ``conf.py``,
