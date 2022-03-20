@@ -235,10 +235,24 @@ Now you can type ``` {ref}`heading-role` ``` to see {ref}`heading-role`
     ```
     As we can see in {py:class}`TESTING!<my_api.MyDemo>`, this is nice!
 
-## Linking Between Sites with Intersphinx
+## Cross-Referencing 
 
 1. Testing interphinx and cross-referencing extension using CCHDO parameters: 
 
+    ```{important}
+    Make sure to activate `sphinx.ext.intersphinx` on your `conf.py` 
+    See details here: `
+    ```
     - ```[](cchdo-website:oxygen)``` -> [](cchdo-website:oxygen)
     - ````{ref}`cchdo-website:parameters````--> {ref}`cchdo-website:parameters`
     - ````{ref}`cchdo-website:Bottle Quality Codes```` -->  {ref}`cchdo-website:Bottle Quality Codes`
+
+3. Implicit Targets
+
+    ````{important}
+    This requires setting ``myst_heading_anchors = 2`` in your ``conf.py``,
+    ```{seealso}
+    [Auto-generated header anchors](https://myst-parser.readthedocs.io/en/v0.15.1/syntax/optional.html#auto-generated-header-anchors).
+    ```
+    ````
+    + You can use `[](#linking)` to see [](#linking)
