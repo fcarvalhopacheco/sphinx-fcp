@@ -42,6 +42,7 @@ intersphinx_mapping = {
     "cchdo-website": ("https://exchange-format.readthedocs.io/en/latest/", None),
 }
 myst_url_schemes = ["http", "https", ]
+myst_heading_anchors = 2
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
