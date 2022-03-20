@@ -482,7 +482,7 @@
 
 4. The Numbered reference role     
 
-   ````{important}
+    ````{important}
     This requires setting ``numfig = True`` in your ``conf.py``,
     ````
 
@@ -497,4 +497,18 @@
     ```
    
    Now you can start referencing {numref}`kilo-moana` --> ``` {numref}`kilo-moana` ```
-   
+  
+4. Automatically Label sections
+
+    + Sphinx can automatically create explicit targets for all sections!  
+    + To activate the extension, add the following to your `conf.py` file:
+    
+        ```python
+        # Add the extension
+        extensions = [
+           'sphinx.ext.autosectionlabel',
+        ]
+
+        # Make sure the target is unique
+        autosectionlabel_prefix_document = True
+        ```
