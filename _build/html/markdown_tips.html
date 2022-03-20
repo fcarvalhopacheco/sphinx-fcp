@@ -505,13 +505,33 @@ Testing this seealso.
 <h2>Documenting Code<a class="headerlink" href="#documenting-code" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic">
 <li><p>Include your code from a file with lines emphasized</p>
-<div class="highlight-markdown notranslate"><div class="highlight"><pre><span></span>```{literalinclude} run_livereload.py
+<div class="highlight-markdown notranslate"><div class="highlight"><pre><span></span>```{literalinclude} my_api.py
 :emphasize-lines: 2-3
 ``` 
 </pre></div>
 </div>
 </li>
-<li><p>The a above code generates the following:</p></li>
+<li><p>The a above code generates the following:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">MyDemo</span><span class="p">:</span>
+<span class="hll">    <span class="sd">&quot;&quot;&quot; A *great* demo &quot;&quot;&quot;</span>
+</span><span class="hll">
+</span>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+
+    <span class="k">def</span> <span class="nf">hello</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">greeting</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot; The canonical hello world example.</span>
+
+<span class="sd">        A *longer* description with some **RST**.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            name: The person to say hello to.</span>
+<span class="sd">        Returns:</span>
+<span class="sd">            str: The greeting</span>
+<span class="sd">         &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">greeting</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">&quot;</span>
+</pre></div>
+</div>
+</li>
 <li><p>Documenting a Module:</p>
 <div class="highlight-markdown notranslate"><div class="highlight"><pre><span></span>```{eval-rst}
 .. autoclass:: my_api.MyDemo:W

@@ -23,11 +23,13 @@ I am using macOS Big Sur 11.6
     (conda/create)=
     
     ```shell script
-    conda create --prefix ./.env python=3.10 sphinx=4.4.0 sphinx-autobuild=2021.3.14 myst-parser=0.17.0 sphinx-autodoc-typehints=1.12.0 nbsphinx=0.8.8 sphinx-book-theme=0.2.0
+    conda create --prefix ./.env python=3.10 ipython=8.1.1 sphinx=4.4.0 sphinx-autobuild=2021.3.14 myst-parser=0.17.0 sphinx-autodoc-typehints=1.12.0 nbsphinx=0.8.8 sphinx-book-theme=0.2.0
     ````
     
     ```{seealso}
-    For more about the packages, please check: 
+    For more information about the packages, please check: 
+    
+    [ipython](https://ipython.org)
     
     [sphinx](https://sphinx-book-theme.readthedocs.io/en/stable/)
    
@@ -409,17 +411,16 @@ I am using macOS Big Sur 11.6
             ```
             ````
       
-      
-    + Next, edit your `conf.py` to enable both Sphinx extensions
+        + Next, edit your `conf.py` to enable both Sphinx extensions
     
-         ```python
-         extensions = [
-            "myst_parser",
-            "sphinx.ext.autodoc",
-            "sphinx.ext.napoleon",
-            "sphinx_autodoc_typehints",
-        ]
-         ```
+             ```python
+             extensions = [
+                "myst_parser",
+                "sphinx.ext.autodoc",
+                "sphinx.ext.napoleon",
+                "sphinx_autodoc_typehints",
+            ]
+             ```
       
  3. Referencing Symbols
  
@@ -444,5 +445,24 @@ I am using macOS Big Sur 11.6
         As we can see in {py:class}`TESTING!<my_api.MyDemo`, this is nice!
         ```
 
-4. 
 
+## Linking between sites
+
+1. Setting up your intersphinx tool extension
+
+    + Open your `conf.py` file and add the following:
+        ```python
+        extensions = [
+            "sphinx.ext.intersphinx",
+        ]   
+        ```
+    + Add also the remote site that we would like to include inventories from. For example: 
+        
+        ```python
+        intersphinx_mapping = {
+            "cchdo-website": ("https://exchange-format.readthedocs.io/en/latest/index.html", None),
+            }
+        myst_url_schemes = ["http", "https", ] 
+        
+       ```
+   

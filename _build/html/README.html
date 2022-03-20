@@ -175,6 +175,11 @@
    3. Documenting your Code
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#linking-between-sites">
+   Linking between sites
+  </a>
+ </li>
 </ul>
 
             </nav>
@@ -210,6 +215,11 @@
    3. Documenting your Code
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#linking-between-sites">
+   Linking between sites
+  </a>
+ </li>
 </ul>
 
                         </nav>
@@ -241,12 +251,13 @@
 </div>
 </li>
 <li><p>Create the following local environment:</p>
-<div class="highlight-shell notranslate" id="conda-create"><div class="highlight"><pre><span></span>conda create --prefix ./.env <span class="nv">python</span><span class="o">=</span><span class="m">3</span>.10 <span class="nv">sphinx</span><span class="o">=</span><span class="m">4</span>.4.0 sphinx-autobuild<span class="o">=</span><span class="m">2021</span>.3.14 myst-parser<span class="o">=</span><span class="m">0</span>.17.0 sphinx-autodoc-typehints<span class="o">=</span><span class="m">1</span>.12.0 <span class="nv">nbsphinx</span><span class="o">=</span><span class="m">0</span>.8.8 sphinx-book-theme<span class="o">=</span><span class="m">0</span>.2.0
+<div class="highlight-shell notranslate" id="conda-create"><div class="highlight"><pre><span></span>conda create --prefix ./.env <span class="nv">python</span><span class="o">=</span><span class="m">3</span>.10 <span class="nv">ipython</span><span class="o">=</span><span class="m">8</span>.1.1 <span class="nv">sphinx</span><span class="o">=</span><span class="m">4</span>.4.0 sphinx-autobuild<span class="o">=</span><span class="m">2021</span>.3.14 myst-parser<span class="o">=</span><span class="m">0</span>.17.0 sphinx-autodoc-typehints<span class="o">=</span><span class="m">1</span>.12.0 <span class="nv">nbsphinx</span><span class="o">=</span><span class="m">0</span>.8.8 sphinx-book-theme<span class="o">=</span><span class="m">0</span>.2.0
 </pre></div>
 </div>
 <div class="admonition seealso">
 <p class="admonition-title">See also</p>
-<p>For more about the packages, please check:</p>
+<p>For more information about the packages, please check:</p>
+<p><a class="reference external" href="https://ipython.org">ipython</a></p>
 <p><a class="reference external" href="https://sphinx-book-theme.readthedocs.io/en/stable/">sphinx</a></p>
 <p><a class="reference external" href="https://github.com/executablebooks/sphinx-autobuild">sphinx-autobuild</a></p>
 <p><a class="reference external" href="https://github.com/executablebooks/MyST-Parser">myst-parser</a></p>
@@ -619,8 +630,6 @@ parse reStructuredText. This is incompatible with our MyST extension. However, w
 </pre></div>
 </div>
 </li>
-</ul>
-</li>
 <li><p>Next, edit your <code class="docutils literal notranslate"><span class="pre">conf.py</span></code> to enable both Sphinx extensions</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">extensions</span> <span class="o">=</span> <span class="p">[</span>
    <span class="s2">&quot;myst_parser&quot;</span><span class="p">,</span>
@@ -630,6 +639,8 @@ parse reStructuredText. This is incompatible with our MyST extension. However, w
 <span class="p">]</span>
 </pre></div>
 </div>
+</li>
+</ul>
 </li>
 </ul>
 </li>
@@ -654,7 +665,31 @@ markdown syntax.</p></li>
 </li>
 </ul>
 </li>
-<li></li>
+</ol>
+</div>
+<div class="section" id="linking-between-sites">
+<h2>Linking between sites<a class="headerlink" href="#linking-between-sites" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p>Setting up your intersphinx tool extension</p>
+<ul>
+<li><p>Open your <code class="docutils literal notranslate"><span class="pre">conf.py</span></code> file and add the following:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">extensions</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s2">&quot;sphinx.ext.intersphinx&quot;</span><span class="p">,</span>
+<span class="p">]</span>   
+</pre></div>
+</div>
+</li>
+<li><p>Add also the remote site that we would like to include inventories from. For example:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">intersphinx_mapping</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;cchdo-website&quot;</span><span class="p">:</span> <span class="p">(</span><span class="s2">&quot;https://exchange-format.readthedocs.io/en/latest/index.html&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">),</span>
+    <span class="p">}</span>
+<span class="n">myst_url_schemes</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;http&quot;</span><span class="p">,</span> <span class="s2">&quot;https&quot;</span><span class="p">,</span> <span class="p">]</span> 
+
+</pre></div>
+</div>
+</li>
+</ul>
+</li>
 </ol>
 </div>
 </div>
