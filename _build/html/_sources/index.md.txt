@@ -13,4 +13,3 @@ Add this line to test linking [](markdown_tips.md)
 README
 markdown_tips
 ```
-
