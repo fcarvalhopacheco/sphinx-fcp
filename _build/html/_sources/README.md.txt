@@ -16,11 +16,12 @@ I am using macOS Big Sur 11.6
     cd  /Users/fcp/workspace/1.git/sphinx-fcp
     ```
     ```{note}
-   Replace `/Users/fcp/workspace/1.git/sphinx-fcp` with your own `path` and folder name
-   ```
-
+    Replace `/Users/fcp/workspace/1.git/sphinx-fcp` with your own `path` and folder name
+    ```
 2. Create the following local environment:
-
+    
+    (conda/create)=
+    
     ```shell script
     conda create --prefix ./.env python=3.10 sphinx=4.4.0 sphinx-autobuild=2021.3.14 myst-parser=0.17.0 sphinx-autodoc-typehints=1.12.0 nbsphinx=0.8.8 sphinx-book-theme=0.2.0
     ````
@@ -261,7 +262,10 @@ I am using macOS Big Sur 11.6
         **Last reminder!**
        
         Install all the programs that you want in this environment at the same time. 
+        
         Installing 1 program at a time can lead to dependency conflicts. 
+        
+        Edit `conda create --prefix ./.env ...... ` with your own theme. {ref}`Check Here <conda/create>`
         ```
 13. Jupyter Notebooks
     - Find jupyter notebook tutorial
