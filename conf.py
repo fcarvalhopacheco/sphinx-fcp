@@ -43,6 +43,7 @@ intersphinx_mapping = {
 }
 myst_url_schemes = ["http", "https", ]
 myst_heading_anchors = 2
+numfig = True
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
