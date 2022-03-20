@@ -36,14 +36,23 @@ extensions = [
     "sphinx_autodoc_typehints",
     "nbsphinx",
     "sphinx.ext.intersphinx",
+    "sphinx.ext.autosectionlabel",
 ]
 
 intersphinx_mapping = {
     "cchdo-website": ("https://exchange-format.readthedocs.io/en/latest/", None),
 }
+
 myst_url_schemes = ["http", "https", ]
+
+# Added cross reference for headings
 myst_heading_anchors = 2
+
+# Add numbered roles
 numfig = True
+
+# Make sure the explicity target is unique
+autosectionlabel_prefix_document = True
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
