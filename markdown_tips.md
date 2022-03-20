@@ -236,3 +236,9 @@ Now you can type ``` {ref}`heading-role` ``` to see {ref}`heading-role`
     As we can see in {py:class}`TESTING!<my_api.MyDemo>`, this is nice!
 
 ## Linking Between Sites with Intersphinx
+
+1. Testing interphinx and cross-referencing extension using CCHDO parameters: 
+
+    - ```[](cchdo-website:oxygen)``` -> [](cchdo-website:oxygen)
+    - ````{ref}`cchdo-website:parameters````--> {ref}`cchdo-website:parameters`
+    - ````{ref}`cchdo-website:Bottle Quality Codes```` -->  {ref}`cchdo-website:Bottle Quality Codes`

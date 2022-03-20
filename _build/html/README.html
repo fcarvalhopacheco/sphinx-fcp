@@ -681,13 +681,19 @@ markdown syntax.</p></li>
 </li>
 <li><p>Add also the remote site that we would like to include inventories from. For example:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">intersphinx_mapping</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s2">&quot;cchdo-website&quot;</span><span class="p">:</span> <span class="p">(</span><span class="s2">&quot;https://exchange-format.readthedocs.io/en/latest/index.html&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">),</span>
-    <span class="p">}</span>
-<span class="n">myst_url_schemes</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;http&quot;</span><span class="p">,</span> <span class="s2">&quot;https&quot;</span><span class="p">,</span> <span class="p">]</span> 
-
+     <span class="s2">&quot;cchdo-website&quot;</span><span class="p">:</span> <span class="p">(</span><span class="s2">&quot;https://exchange-format.readthedocs.io/en/latest/&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">),</span>
+<span class="p">}</span>
+<span class="n">myst_url_schemes</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;http&quot;</span><span class="p">,</span> <span class="s2">&quot;https&quot;</span><span class="p">,</span> <span class="p">]</span>
 </pre></div>
 </div>
 </li>
+</ul>
+</li>
+<li><p>Testing interphinx and cross-referencing extension using CCHDO parameters:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">[](cchdo-website:oxygen)</span></code> -&gt; <a class="reference external" href="https://exchange-format.readthedocs.io/en/latest/parameters.html#oxygen" title="(in Exchange Format v1.2)"><span>OXYGEN</span></a></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">{ref}`cchdo-website:parameters</span></code>–&gt; <a class="reference external" href="https://exchange-format.readthedocs.io/en/latest/parameters.html#parameters" title="(in Exchange Format v1.2)"><span>Parameters</span></a></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">{ref}`cchdo-website:Bottle</span> <span class="pre">Quality</span> <span class="pre">Codes</span></code> –&gt;  <a class="reference external" href="https://exchange-format.readthedocs.io/en/latest/quality.html#bottle-quality-codes" title="(in Exchange Format v1.2)"><span>WOCE Bottle Quality Codes</span></a></p></li>
 </ul>
 </li>
 </ol>

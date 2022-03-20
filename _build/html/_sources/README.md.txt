@@ -457,12 +457,14 @@ I am using macOS Big Sur 11.6
         ]   
         ```
     + Add also the remote site that we would like to include inventories from. For example: 
-        
-        ```python
+        ```python        
         intersphinx_mapping = {
-            "cchdo-website": ("https://exchange-format.readthedocs.io/en/latest/index.html", None),
-            }
-        myst_url_schemes = ["http", "https", ] 
-        
-       ```
-   
+             "cchdo-website": ("https://exchange-format.readthedocs.io/en/latest/", None),
+        }
+        myst_url_schemes = ["http", "https", ]
+        ```
+2. Testing interphinx and cross-referencing extension using CCHDO parameters: 
+
+    - ```[](cchdo-website:oxygen)``` -> [](cchdo-website:oxygen)
+    - ````{ref}`cchdo-website:parameters````--> {ref}`cchdo-website:parameters`
+    - ````{ref}`cchdo-website:Bottle Quality Codes```` -->  {ref}`cchdo-website:Bottle Quality Codes`

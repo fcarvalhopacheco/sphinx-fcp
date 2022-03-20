@@ -35,11 +35,11 @@ extensions = [
     "sphinx.ext.napoleon",
     "sphinx_autodoc_typehints",
     "nbsphinx",
-    "sphinx.ext.intersphinx"
+    "sphinx.ext.intersphinx",
 ]
 
 intersphinx_mapping = {
-    "cchdo-website": ("https://exchange-format.readthedocs.io/en/latest/index.html", None),
+    "cchdo-website": ("https://exchange-format.readthedocs.io/en/latest/", None),
 }
 myst_url_schemes = ["http", "https", ]
 
