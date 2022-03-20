@@ -1,14 +1,11 @@
-# Sphinx and Markdown training
+# Sphinx Tutorial
 
 [Reference: talkpython](https://training.talkpython.fm/courses/details/static-sites-with-sphinx-and-markdown)
 
-Static Website with Sphinx and Markdown
+* This is my README.md 
 
-```{important}
-I am using macOS Big Sur 11.6
-```
+## Start Here: Setup 
 
-## 1. Setup 
 1. On your terminal, create a new project folder:
 
     ```shell script
@@ -18,6 +15,7 @@ I am using macOS Big Sur 11.6
     ```{note}
     Replace `/Users/fcp/workspace/1.git/sphinx-fcp` with your own `path` and folder name
     ```
+
 2. Create the following local environment:
     
     (conda/create)=
@@ -44,7 +42,7 @@ I am using macOS Big Sur 11.6
     [sphinx-book-theme](https://sphinx-book-theme.readthedocs.io/en/stable/)
     ```
    
-2. When conda asks you to proceed, type `y`:    
+3. When conda asks you to proceed, type `y`:    
    
     ```shell script
     proceed ([y]/n)?
@@ -59,13 +57,13 @@ I am using macOS Big Sur 11.6
     ```{seealso}
     Check more tips [**here**](https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html)
     ```
-3. Activate your environment created with the prefix `.env/` :
+4. Activate your environment created with the prefix `.env/` :
     
     ```shell script
     conda acvtivate .env/
     ```
 
-4. Check Sphinx installation:
+5. Check Sphinx installation:
 
     ```shell script
     which sphinx-quickstart
@@ -73,7 +71,7 @@ I am using macOS Big Sur 11.6
     ```{note}
     For me: `/Users/fcp/workspace/1.git/sphinx-fcp/.env/bin/sphinx-quickstart`
     ```
-5. Make a Sphinx website using our downloaded theme `sphinx-book-theme`:
+6. Make a Sphinx website using our downloaded theme `sphinx-book-theme`:
 
     ```shell script
     sphinx-quickstart
@@ -126,13 +124,13 @@ I am using macOS Big Sur 11.6
                                    such as rendering the content.
         ```
    
-6. Add `.env/` folder to `conf.py`:
+7. Add `.env/` folder to `conf.py`:
     
     ```python
     exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store','.env']
     ```
  
-7. Render the documentation as HTML for the first time:
+8. Render the documentation as HTML for the first time:
  
     ```shell script
     sphinx-build -b html ../sphinx-fcp _build/html  
@@ -158,7 +156,7 @@ I am using macOS Big Sur 11.6
 
     The HTML pages are in _build/html.
     ```   
-8. Start the website and start tracking changes:
+9. Start the website and start tracking changes:
 
     ```shell script
     sphinx-autobuild ../sphinx-fcp _build/html    
@@ -169,7 +167,7 @@ I am using macOS Big Sur 11.6
     in the `~/sphinx-fcp` directory
     ```
     
-9. Add Markdown:
+10. Add Markdown:
     
     + open `conf.py`, and add the following:
     
@@ -179,7 +177,7 @@ I am using macOS Big Sur 11.6
         ]
         ```
    
-10. Play with Markdown:
+11. Create a Markdown file:
 
     + Create the following
         ```shell script
@@ -219,7 +217,7 @@ I am using macOS Big Sur 11.6
 
         ```     
 
-11. Clean up:
+12. Clean up:
 
     + Convert `index.rst` to `index.md` 
     
@@ -243,14 +241,15 @@ I am using macOS Big Sur 11.6
         ```
         ````
 
-12. Other themes:
-
-+ Check [Sphinx-Themes](https://sphinx-themes.org). Then, choose one of the examples and follow their installation guide.
-+ Example:
-    - If choose [Sphinx-rtd-theme](https://sphinx-themes.org/sample-sites/sphinx-rtd-theme/), you can install it by 
-    doing the following:
+13. Other themes:
     
-        1. Install the theme
+    + Check [Sphinx-Themes](https://sphinx-themes.org). Then, choose one of the examples and follow their
+     installation guide.
+    
+    + If choose [Sphinx-rtd-theme](https://sphinx-themes.org/sample-sites/sphinx-rtd-theme/), you can install it by
+      doing the following:
+    
+        1. Install the theme:
             ```shell script
             python -m pip install sphinx-rtd-theme 
             ```
@@ -269,10 +268,12 @@ I am using macOS Big Sur 11.6
         
         Edit `conda create --prefix ./.env ...... ` with your own theme. {ref}`Check Here <conda/create>`
         ```
-13. Jupyter Notebooks
+
+14. ***Jupyter Notebooks*** FIX-ME 
+  
     - Find jupyter notebook tutorial
  
-## 2. Markdown TIPS:
+##  Markdown
 
 1. How to display  images:
      
@@ -298,9 +299,10 @@ I am using macOS Big Sur 11.6
         :align: center
         ```
         ````
-        ```{tip``` 
+        ```{tip}
          You will notice that the image is now centered in the page
-
+        ```
+          
 4. Add/Enable some MyST extensions.
 
     + edit your `conf.py` file with the following :
@@ -347,7 +349,7 @@ I am using macOS Big Sur 11.6
     Add this line to test linking [](markdown_tips.md)
     ``` 
     
-7. For  heading references:     
+7. Explicit target - cross reference     
     
     ```markdown
     (heading-role)=
@@ -355,12 +357,11 @@ I am using macOS Big Sur 11.6
     ```
     
     ```{tip}
-    Now you can type ``` {ref}`heading-role` ``` to see {ref}`heading-role`
+    - Type ``` {ref}`heading-role` ``` to see {ref}`heading-role`
+    - Type ```[](heading_role) ``` to see [](heading-role)
     ```
 
-
-
-## 3. Documenting your Code
+##  Documenting your Code
  
 1. Literalinclude   
  
@@ -446,7 +447,7 @@ I am using macOS Big Sur 11.6
         ```
 
 
-## Linking between sites
+##  More Cross-referencing 
 
 1. Setting up your intersphinx tool extension
 
@@ -456,15 +457,26 @@ I am using macOS Big Sur 11.6
             "sphinx.ext.intersphinx",
         ]   
         ```
-    + Add also the remote site that we would like to include inventories from. For example: 
+    + Add the remote site that we would like to include inventories from. For example: 
         ```python        
         intersphinx_mapping = {
              "cchdo-website": ("https://exchange-format.readthedocs.io/en/latest/", None),
         }
         myst_url_schemes = ["http", "https", ]
         ```
-2. Testing interphinx and cross-referencing extension using CCHDO parameters: 
+2. Testing interphinx extenstion using CCHDO parameters: 
 
-    - ```[](cchdo-website:oxygen)``` -> [](cchdo-website:oxygen)
-    - ````{ref}`cchdo-website:parameters````--> {ref}`cchdo-website:parameters`
-    - ````{ref}`cchdo-website:Bottle Quality Codes```` -->  {ref}`cchdo-website:Bottle Quality Codes`
+    + ```[](cchdo-website:oxygen)``` -> [](cchdo-website:oxygen)
+    + ````{ref}`cchdo-website:parameters````--> {ref}`cchdo-website:parameters`
+    + ````{ref}`cchdo-website:Bottle Quality Codes```` -->  {ref}`cchdo-website:Bottle Quality Codes`
+
+3. Implicit Targets
+
+    ````{important}
+    This requires setting ``myst_heading_anchors = 2`` in your ``conf.py``,
+    ```{seealso}
+    [Auto-generated header anchors](https://myst-parser.readthedocs.io/en/v0.15.1/syntax/optional.html#auto-generated-header-anchors).
+    ```
+    ````
+    + You can use `[](#linking)` to see [](#linking)
+     
