@@ -35,7 +35,7 @@
     <script src="_static/sphinx-book-theme.9d8b4a8b9bb19db25eeaddc40d639ba2.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="prev" title="Sphinx and Markdown training" href="README.html" />
+    <link rel="prev" title="Sphinx Tutorial" href="README.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -80,7 +80,7 @@
 <ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="README.html">
-   Sphinx and Markdown training
+   Sphinx Tutorial
   </a>
  </li>
  <li class="toctree-l1 current active">
@@ -229,8 +229,8 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#linking-between-sites-with-intersphinx">
-   Linking Between Sites with Intersphinx
+  <a class="reference internal nav-link" href="#cross-referencing">
+   Cross-Referencing
   </a>
  </li>
 </ul>
@@ -323,8 +323,8 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#linking-between-sites-with-intersphinx">
-   Linking Between Sites with Intersphinx
+  <a class="reference internal nav-link" href="#cross-referencing">
+   Cross-Referencing
   </a>
  </li>
 </ul>
@@ -594,14 +594,32 @@ Testing this seealso.
 </li>
 </ol>
 </div>
-<div class="section" id="linking-between-sites-with-intersphinx">
-<h2>Linking Between Sites with Intersphinx<a class="headerlink" href="#linking-between-sites-with-intersphinx" title="Permalink to this headline">¶</a></h2>
-<ol class="arabic simple">
+<div class="section" id="cross-referencing">
+<h2>Cross-Referencing<a class="headerlink" href="#cross-referencing" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
 <li><p>Testing interphinx and cross-referencing extension using CCHDO parameters:</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Make sure to activate <code class="docutils literal notranslate"><span class="pre">sphinx.ext.intersphinx</span></code> on your <code class="docutils literal notranslate"><span class="pre">conf.py</span></code>
+See details here: `</p>
+</div>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">[](cchdo-website:oxygen)</span></code> -&gt; <a class="reference external" href="https://exchange-format.readthedocs.io/en/latest/parameters.html#oxygen" title="(in Exchange Format v1.2)"><span>OXYGEN</span></a></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">{ref}`cchdo-website:parameters</span></code>–&gt; <a class="reference external" href="https://exchange-format.readthedocs.io/en/latest/parameters.html#parameters" title="(in Exchange Format v1.2)"><span>Parameters</span></a></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">{ref}`cchdo-website:Bottle</span> <span class="pre">Quality</span> <span class="pre">Codes</span></code> –&gt;  <a class="reference external" href="https://exchange-format.readthedocs.io/en/latest/quality.html#bottle-quality-codes" title="(in Exchange Format v1.2)"><span>WOCE Bottle Quality Codes</span></a></p></li>
+</ul>
+</li>
+<li><p>Implicit Targets</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>This requires setting <code class="docutils literal notranslate"><span class="pre">myst_heading_anchors</span> <span class="pre">=</span> <span class="pre">2</span></code> in your <code class="docutils literal notranslate"><span class="pre">conf.py</span></code>,</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference external" href="https://myst-parser.readthedocs.io/en/v0.15.1/syntax/optional.html#auto-generated-header-anchors">Auto-generated header anchors</a>.</p>
+</div>
+</div>
+<ul class="simple">
+<li><p>You can use <code class="docutils literal notranslate"><span class="pre">[](#linking)</span></code> to see <a class="reference internal" href="#linking"><span class="std std-doc">Linking</span></a></p></li>
 </ul>
 </li>
 </ol>
@@ -618,7 +636,7 @@ Testing this seealso.
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Sphinx and Markdown training</p>
+            <p class="prev-next-title">Sphinx Tutorial</p>
         </div>
     </a>
 </div>
