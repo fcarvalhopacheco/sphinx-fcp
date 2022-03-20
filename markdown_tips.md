@@ -223,9 +223,9 @@ Now you can type ``` {ref}`heading-role` ``` to see {ref}`heading-role`
     ````{important}
     -Make sure to activate `sphinx.ext.intersphinx` on your `conf.py` 
     
-    -See details here:  FIX-ME #TODO
+    -See details here: {ref}`readme:more cross-referencing`
     ````
-   
+    
     - ```[](cchdo-website:oxygen)``` -> [](cchdo-website:oxygen)
     - ````{ref}`cchdo-website:parameters````--> {ref}`cchdo-website:parameters`
     - ````{ref}`cchdo-website:Bottle Quality Codes```` -->  {ref}`cchdo-website:Bottle Quality Codes`
