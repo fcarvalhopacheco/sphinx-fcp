@@ -268,10 +268,6 @@
         
         Edit `conda create --prefix ./.env ...... ` with your own theme. {ref}`Check Here <conda/create>`
         ```
-
-14. ***Jupyter Notebooks*** FIX-ME 
-  
-    - Find jupyter notebook tutorial
  
 ##  Markdown
 
@@ -512,3 +508,14 @@
         # Make sure the target is unique
         autosectionlabel_prefix_document = True
         ```
+        
+        ````{tip} 
+        Finding the reference name:
+        ```shell script
+        python3 -m sphinx.ext.intersphinx _build/html/objects.inv
+        ``` 
+        ````
+    + For example:
+    
+        ` {ref}`readme:start here: setup` ` --> {ref}`readme:start here: setup`
+         
