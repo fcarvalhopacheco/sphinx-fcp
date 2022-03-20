@@ -1,4 +1,4 @@
-# Markdown Tips
+# MyST + Markdown 
 
 ## Add Figure-1
 
@@ -223,9 +223,9 @@ Now you can type ``` {ref}`heading-role` ``` to see {ref}`heading-role`
     ````{important}
     -Make sure to activate `sphinx.ext.intersphinx` on your `conf.py` 
     
-    -See details here:  FIX-ME #TODO
+    -See details here: {ref}`readme:more cross-referencing`
     ````
-   
+    
     - ```[](cchdo-website:oxygen)``` -> [](cchdo-website:oxygen)
     - ````{ref}`cchdo-website:parameters````--> {ref}`cchdo-website:parameters`
     - ````{ref}`cchdo-website:Bottle Quality Codes```` -->  {ref}`cchdo-website:Bottle Quality Codes`
@@ -239,3 +239,33 @@ Now you can type ``` {ref}`heading-role` ``` to see {ref}`heading-role`
     ```
     ````
     + You can use `[](#linking)` to see [](#linking)
+    
+3. Numbered reference role     
+
+    ````{important}
+    This requires setting ``numfig = True`` in your ``conf.py``,
+    ````
+
+    + The `numref` role is used to reference numbered elements of the documentation, such as tables and images.
+
+        ````markdown
+        ```{figure} _build/html/_images/kilo-moana.jpg
+        :scale: 40%
+        :align: center
+        :name: kilo-moana
+        
+        R/V Kilo Moana 
+        ```
+        ````
+
+        ```{figure} _build/html/_images/kilo-moana.jpg
+        :scale: 40%
+        :align: center
+        :name: kilo-moana
+    
+        R/V Kilo Moana
+        ```
+   
+        Now you can start referencing {numref}`kilo-moana` --> ``` {numref}`kilo-moana` ```
+
+ 
