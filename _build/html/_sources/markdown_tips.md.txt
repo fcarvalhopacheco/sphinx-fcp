@@ -1,12 +1,13 @@
 # MyST + Markdown 
 
-## Add Figure-1
+## Images
+### Add Figure-1
 
 `![HOT](https://datadocs.bco-dmo.org/d2/images/logos/logo_HOT.jpg)`
 
 ![HOT](https://datadocs.bco-dmo.org/d2/images/logos/logo_HOT.jpg)
 
-## Edit Figure-2
+### Edit Figure-2
     
 ````
 ```{figure} _build/html/_images/logo_HOT.jpg
@@ -27,7 +28,7 @@ Hawaii Ocean Time-Series *University of Hawaii*.
 
 ```
 
-## Alerts (Note, Tip, Important, Caution, Warning, See also)
+## Alerts 
 
 ### Note
         
@@ -139,7 +140,7 @@ Testing this seealso.
     
 ## Linking
 
-1.  Do the following to change the link title automatically. 
++ Do the following to change the link title automatically. 
 
     ```markdown
     Add this line to test linking [](markdown_tips.md)
@@ -148,11 +149,11 @@ Testing this seealso.
 
     
 (heading-role)=
-### Heading and Role 
+### Example to link this Head
     
 ```
 (heading-role)=
-### Heading and Role
+### Example to link this Head
 ```
 
 ```{note}
@@ -161,39 +162,40 @@ Now you can type ``` {ref}`heading-role` ``` to see {ref}`heading-role`
 
 ## Documenting Code 
 
-1. Include your code from a file with lines emphasized
+### Emphasize lines
 
-    ````markdown 
-    ```{literalinclude} my_api.py
-    :emphasize-lines: 2-3
-    ``` 
-     ````
-2. The a above code generates the following:
+````markdown 
+```{literalinclude} my_api.py
+:emphasize-lines: 2-3
+``` 
+ ````
+
++ The a above code generates the following:
 
     ```{literalinclude} my_api.py
     :emphasize-lines: 2-3
     ```
   
-3. Documenting a Module: 
+### Documenting a Module: 
      
-    ````markdown
-    ```{eval-rst}
-    .. autoclass:: my_api.MyDemo:W
-  
-      :members:
-    ```
-    ````
-    
-    ```{eval-rst}
-    .. autoclass:: my_api.MyDemo
-      :members:
-    ```
-    
-    ```{note}
-    This is visually nice! Also, it's semantically rich.
-    ```
+````markdown
+```{eval-rst}
+.. autoclass:: my_api.MyDemo:W
 
-## Referencing Symbols
+  :members:
+```
+````
+
+```{eval-rst}
+.. autoclass:: my_api.MyDemo
+  :members:
+```
+
+```{note}
+This is visually nice! Also, it's semantically rich.
+```
+
+### Referencing Symbols
  
 1. First example , we can us `MyST` extended markdown syntax:
 
@@ -216,56 +218,76 @@ Now you can type ``` {ref}`heading-role` ``` to see {ref}`heading-role`
     ```
     As we can see in {py:class}`TESTING!<my_api.MyDemo>`, this is nice!
 
-## Cross-Referencing 
+### Cross-Referencing 
 
-1. Testing interphinx and cross-referencing extension using CCHDO parameters: 
+#### Testing Intersphinx 
 
-    ````{important}
-    -Make sure to activate `sphinx.ext.intersphinx` on your `conf.py` 
+````{important}
+-Make sure to activate `sphinx.ext.intersphinx` on your `conf.py` 
+
+-See details here: {ref}`readme:more cross-referencing`
+````
+
+- ```[](cchdo-website:oxygen)``` -> [](cchdo-website:oxygen)
+- ````{ref}`cchdo-website:parameters````--> {ref}`cchdo-website:parameters`
+- ````{ref}`cchdo-website:Bottle Quality Codes```` -->  {ref}`cchdo-website:Bottle Quality Codes`
+
+#### Implicit Targets
+
+````{important}
+This requires setting ``myst_heading_anchors = 2`` in your ``conf.py``,
+```{seealso}
+[Auto-generated header anchors](https://myst-parser.readthedocs.io/en/v0.15.1/syntax/optional.html#auto-generated-header-anchors).
+```
+````
++ You can use `[](#linking)` to see [](#linking)
     
-    -See details here: {ref}`readme:more cross-referencing`
-    ````
+#### Numbered Reference Role     
+
+````{important}
+This requires setting ``numfig = True`` in your ``conf.py``,
+````
+
++ The `numref` role is used to reference numbered elements of the documentation, such as tables and images.
+
+    ````markdown
+    ```{figure} _build/html/_images/kilo-moana.jpg
+    :scale: 40%
+    :align: center
+    :name: kilo-moana
     
-    - ```[](cchdo-website:oxygen)``` -> [](cchdo-website:oxygen)
-    - ````{ref}`cchdo-website:parameters````--> {ref}`cchdo-website:parameters`
-    - ````{ref}`cchdo-website:Bottle Quality Codes```` -->  {ref}`cchdo-website:Bottle Quality Codes`
-
-2. Implicit Targets
-
-    ````{important}
-    This requires setting ``myst_heading_anchors = 2`` in your ``conf.py``,
-    ```{seealso}
-    [Auto-generated header anchors](https://myst-parser.readthedocs.io/en/v0.15.1/syntax/optional.html#auto-generated-header-anchors).
+    R/V Kilo Moana 
     ```
     ````
-    + You can use `[](#linking)` to see [](#linking)
-    
-3. Numbered reference role     
+
+    ```{figure} _build/html/_images/kilo-moana.jpg
+    :scale: 40%
+    :align: center
+    :name: kilo-moana
+
+    R/V Kilo Moana
+    ```
+
+    Now you can start referencing {numref}`kilo-moana` --> ``` {numref}`kilo-moana` ```
+
+#### Automatically Label sections
+
++ Sphinx can automatically create explicit targets for all sections!  
 
     ````{important}
-    This requires setting ``numfig = True`` in your ``conf.py``,
+    This requires the following setting on your `conf.py` file
+  
+    ```python
+    # Add the extension
+    extensions = [
+       'sphinx.ext.autosectionlabel',
+    ]
+
+    # Make sure the target is unique
+    autosectionlabel_prefix_document = True
+    ```
     ````
-
-    + The `numref` role is used to reference numbered elements of the documentation, such as tables and images.
-
-        ````markdown
-        ```{figure} _build/html/_images/kilo-moana.jpg
-        :scale: 40%
-        :align: center
-        :name: kilo-moana
-        
-        R/V Kilo Moana 
-        ```
-        ````
-
-        ```{figure} _build/html/_images/kilo-moana.jpg
-        :scale: 40%
-        :align: center
-        :name: kilo-moana
     
-        R/V Kilo Moana
-        ```
-   
-        Now you can start referencing {numref}`kilo-moana` --> ``` {numref}`kilo-moana` ```
-
+    ` {ref}`readme:start here: setup` ` --> {ref}`readme:start here: setup`
+ 
  

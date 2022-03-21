@@ -4,7 +4,7 @@
 
 * This is my README.md 
 
-## Start Here: Setup 
+## Setup 
 
 1. On your terminal, create a new project folder:
 
@@ -228,8 +228,6 @@
 
         Welcome to my testing.
 
-        Testing this thing {ref}`logo-target`
-
         Add this line to test linking [](markdown_tips.md)
 
         ```{toctree}
@@ -270,12 +268,12 @@
         ```
  
 ##  Markdown
+### Images 
+ 
+1. Display any image with a link     
+`![HOT](https://datadocs.bco-dmo.org/d2/images/logos/logo_HOT.jpg)`, generates the following:
 
-1. How to display  images:
-     
-    `![HOT](https://datadocs.bco-dmo.org/d2/images/logos/logo_HOT.jpg)`, generates the following:
-
-    ![HOT](https://datadocs.bco-dmo.org/d2/images/logos/logo_HOT.jpg)
+![HOT](https://datadocs.bco-dmo.org/d2/images/logos/logo_HOT.jpg)
 
 2. Download the image locally:
     
@@ -298,10 +296,11 @@
         ```{tip}
          You will notice that the image is now centered in the page
         ```
-          
-4. Add/Enable some MyST extensions.
 
-    + edit your `conf.py` file with the following :
+### Extensions          
+1. Add/Enable some MyST extensions.
+
+    + Edit your `conf.py` file with the following :
     
         ```python
         # Enable some MyST extensions.
@@ -309,26 +308,8 @@
             "colon_fence",
         ]
         ```
-    
-    + Add the following into `markdown_tips.md`:
-        
-        ```markdown
-        :::{figure-md} logo-target
-        :class: myclass
 
-        <img src="_build/html/_images/logo_HOT.jpg" alt="HOT-2" class="bg-primary" width="300px">
-
-        Hawaii Ocean Time-Series *University of Hawaii*.
-        :::
-        ```
-   
-   + Add the following in the `index.md` file.
-   
-       ```markdown
-       Testing this thing {ref}`logo-target`.
-       ```
-
-5. Adding Warnings
+2. Adding Warnings
     
     ```markdown
     :::{warning}
@@ -339,13 +320,13 @@
     :::
     ```
 
-6.  Do the following to change the link title automatically 
+3. Do the following to change the link title automatically 
 
     ```markdown
     Add this line to test linking [](markdown_tips.md)
     ``` 
     
-7. Explicit target - cross reference     
+4. Explicit target - cross reference     
     
     ```markdown
     (heading-role)=
@@ -359,22 +340,22 @@
 
 ##  Documenting your Code
  
-1. Literalinclude   
+### Literalinclude   
  
-    ````markdown   
-    ```{literalinclude} run_livereload.py
-    :emphasize-lines: 2-4  
-    ``` 
-    ````
+````markdown   
+```{literalinclude} run_livereload.py
+:emphasize-lines: 2-4  
+``` 
+````
 
-2. Autodoc
+### Autodoc
 
-    With Autodoc, your sphinx doc will automatically create a structure,
-    highlighted, interlinked collection of sections. Also, symbols in the code
-    will become `roles` in sphinx which you can directly to.  
+With Autodoc, your sphinx doc will automatically create a structure,
+highlighted, interlinked collection of sections. Also, symbols in the code
+will become `roles` in sphinx which you can directly to.  
        
-    + Turn on `autodoc` by editing `conf.py`. Also, add the current directory 
-    to the front of our `PYTHONPATH`, so our module can be imported. 
++ Turn on `autodoc` by editing `conf.py`. Also, add the current directory 
+to the front of our `PYTHONPATH`, so our module can be imported. 
 
         ```python
         import os
@@ -387,135 +368,135 @@
         ]
         ```
 
-    + Documenting a Python Module
++ Documenting a Python Module
     
-        Let's create a page called `my_api.py` into which we would like
-        to include some module documentation.
+    Let's create a page called `my_api.py` into which we would like
+    to include some module documentation.
+
+    ```markdown
+    touch my_api.py
+    ```
     
-        ```markdown
-        touch my_api.py
-        ```
-    
-        The [Sphinx extension `autodoc`](https://myst-parser.readthedocs.io/en/latest/sphinx/use.html?highlight=sphinx.ext.autodoc#use-sphinx-ext-autodoc-in-markdown-files)
-        , which pulls in code documentation from docstrings, is currently hard-coded to 
-        parse reStructuredText. This is incompatible with our MyST extension. However, we can use `eval-rst` to make  
-        `autodoc` work.
+The [Sphinx extension `autodoc`](https://myst-parser.readthedocs.io/en/latest/sphinx/use.html?highlight=sphinx.ext.autodoc#use-sphinx-ext-autodoc-in-markdown-files)
+, which pulls in code documentation from docstrings, is currently hard-coded to 
+parse reStructuredText. This is incompatible with our MyST extension. However, we can use `eval-rst` to make  
+`autodoc` work.
         
-        + Add the following on your `markdown_tips.md ` file 
-            ````markdown
-            ```{eval-rst}
-            .. autoclas:: my_api.MyDemo
-            ```
-            ````
-      
-        + Next, edit your `conf.py` to enable both Sphinx extensions
-    
-             ```python
-             extensions = [
-                "myst_parser",
-                "sphinx.ext.autodoc",
-                "sphinx.ext.napoleon",
-                "sphinx_autodoc_typehints",
-            ]
-             ```
-      
- 3. Referencing Symbols
- 
-    + Open `markdown_tips.md` for editing. Let's talk about `my_api.md` using
-    markdown syntax. 
- 
-    + Example-1 , we can us `MyST` extended markdown syntax:
-
-        ```markdown
-        As we can see in [This is my_api.md](my_api.MyDemo), this is nice!
-        ```
-
-    + Example-2, we can also use `role-base` syntax:
-
-        ```markdown
-        As we can see in {py:class}`my_api.MyDemo`, this is nice!
-        ```
-    
-    + Example-3, provide your own text:
-
-        ```markdown 
-        As we can see in {py:class}`TESTING!<my_api.MyDemo`, this is nice!
-        ```
-
-
-##  More Cross-referencing 
-
-1. Setting up your intersphinx tool extension
-
-    + Open your `conf.py` file and add the following:
-        ```python
-        extensions = [
-            "sphinx.ext.intersphinx",
-        ]   
-        ```
-    + Add the remote site that we would like to include inventories from. For example: 
-        ```python        
-        intersphinx_mapping = {
-             "cchdo-website": ("https://exchange-format.readthedocs.io/en/latest/", None),
-        }
-        myst_url_schemes = ["http", "https", ]
-        ```
-2. Testing interphinx extention using CCHDO parameters: 
-
-    + ```[](cchdo-website:oxygen)``` -> [](cchdo-website:oxygen)
-    + ````{ref}`cchdo-website:parameters````--> {ref}`cchdo-website:parameters`
-    + ````{ref}`cchdo-website:Bottle Quality Codes```` -->  {ref}`cchdo-website:Bottle Quality Codes`
-
-3. Implicit Targets
-
-    ````{important}
-    This requires setting ``myst_heading_anchors = 2`` in your ``conf.py``,
-    ```{seealso}
-    [Auto-generated header anchors](https://myst-parser.readthedocs.io/en/v0.15.1/syntax/optional.html#auto-generated-header-anchors).
++ Add the following on your `markdown_tips.md ` file 
+    ````markdown
+    ```{eval-rst}
+    .. autoclas:: my_api.MyDemo
     ```
     ````
-    + You can use `[](#more-cross-referencing)` to see [](#more-cross-referencing)
+      
++ Next, edit your `conf.py` to enable both Sphinx extensions
 
-4. The Numbered reference role     
-
-    ````{important}
-    This requires setting ``numfig = True`` in your ``conf.py``,
-    ````
-
-    + The `numref` role is used to reference numbered elements of the documentation, such as tables and images.
-
-    ```{figure} _build/html/_images/kilo-moana.jpg
-    :scale: 40%
-    :align: center
-    :name: kilo-moana
-    
-    R/V Kilo Moana 
+     ```python
+     extensions = [
+        "myst_parser",
+        "sphinx.ext.autodoc",
+        "sphinx.ext.napoleon",
+        "sphinx_autodoc_typehints",
+    ]
     ```
+  
+### Referencing Symbols
+ 
++ Open `markdown_tips.md` for editing. Let's talk about `my_api.md` using
+markdown syntax. 
+
++ Example-1 , we can us `MyST` extended markdown syntax:
+
+    ```markdown
+    As we can see in [This is my_api.md](my_api.MyDemo), this is nice!
+    ```
+
++ Example-2, we can also use `role-base` syntax:
+
+    ```markdown
+    As we can see in {py:class}`my_api.MyDemo`, this is nice!
+    ```
+
++ Example-3, provide your own text:
+
+    ```markdown 
+    As we can see in {py:class}`TESTING!<my_api.MyDemo`, this is nice!
+    ```
+
+
+###  More Cross-referencing 
+
+#### Setting up Intersphinx extension
+
++ Open your `conf.py` file and add the following:
+    ```python
+    extensions = [
+        "sphinx.ext.intersphinx",
+    ]   
+    ```
++ Add the remote site that we would like to include inventories from. For example: 
+    ```python        
+    intersphinx_mapping = {
+         "cchdo-website": ("https://exchange-format.readthedocs.io/en/latest/", None),
+    }
+    myst_url_schemes = ["http", "https", ]
+    ```
+#### Testing Interphinx 
+
++ ```[](cchdo-website:oxygen)``` -> [](cchdo-website:oxygen)
++ ````{ref}`cchdo-website:parameters````--> {ref}`cchdo-website:parameters`
++ ````{ref}`cchdo-website:Bottle Quality Codes```` -->  {ref}`cchdo-website:Bottle Quality Codes`
+
+#### Implicit Targets
+
+````{important}
+This requires setting ``myst_heading_anchors = 3`` in your ``conf.py``,
+```{seealso}
+[Auto-generated header anchors](https://myst-parser.readthedocs.io/en/v0.15.1/syntax/optional.html#auto-generated-header-anchors).
+```
+````
+
++ You can use `[](#images)` to see [](#images)
+
+#### Numbered Reference Role     
+
+````{important}
+This requires setting ``numfig = True`` in your ``conf.py``,
+````
+
++ The `numref` role is used to reference numbered elements of the documentation, such as tables and images.
+
+```{figure} _build/html/_images/kilo-moana.jpg
+:scale: 40%
+:align: center
+:name: kilo-moana
+
+R/V Kilo Moana 
+```
    
    Now you can start referencing {numref}`kilo-moana` --> ``` {numref}`kilo-moana` ```
   
-4. Automatically Label sections
+####  Automatically Label sections
 
-    + Sphinx can automatically create explicit targets for all sections!  
-    + To activate the extension, add the following to your `conf.py` file:
-    
-        ```python
-        # Add the extension
-        extensions = [
-           'sphinx.ext.autosectionlabel',
-        ]
++ Sphinx can automatically create explicit targets for all sections!  
++ To activate the extension, add the following to your `conf.py` file:
 
-        # Make sure the target is unique
-        autosectionlabel_prefix_document = True
-        ```
-        
-        ````{tip} 
-        Finding the reference name:
-        ```shell script
-        python3 -m sphinx.ext.intersphinx _build/html/objects.inv
-        ``` 
-        ````
-    + For example:
+    ```python
+    # Add the extension
+    extensions = [
+       'sphinx.ext.autosectionlabel',
+    ]
+
+    # Make sure the target is unique
+    autosectionlabel_prefix_document = True
+    ```
     
-        ` {ref}`readme:start here: setup` ` --> {ref}`readme:start here: setup`
-         
+    ````{tip} 
+    Finding the reference name:
+    ```shell script
+    python3 -m sphinx.ext.intersphinx _build/html/objects.inv
+    ``` 
+    ````
++ For example:
+
+    ` {ref}`readme:setup` ` --> {ref}`readme:setup`
