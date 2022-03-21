@@ -20,10 +20,10 @@ sys.path.insert(0, os.path.abspath('.'))
 # -- Project information -----------------------------------------------------
 
 project = "My Sphinx"
-copyright = f'{datetime.now().year}, Fernando Carvalho Pacheco'
-author = "Fernando Carvalho Pacheco <fernando.pacheco@hawaii.edu>"
+copyright = f'{datetime.now().year}, Fernando Carvalho Pacheco <fernando.pacheco@hawaii.edu>'
+author = "Fernando Carvalho Pacheco"
 html_title = "My Sphinx =)"
-
+html_logo = "_build/html/_images/logo_HOT.jpg"
 # -- General configuration ---------------------------------------------------
 
 # Add any Sphinx extension module names here, as strings. They can be
@@ -53,7 +53,7 @@ numfig = True
 
 # Make sure the explicity target is unique
 autosectionlabel_prefix_document = True
-autosectionlabel_maxdepth = 2
+autosectionlabel_maxdepth = 3
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
@@ -80,3 +80,12 @@ html_static_path = ['_static']
 myst_enable_extensions = [
     "colon_fence",
 ]
+
+html_theme_options = {
+    "repository_url": "https://github.com/fcarvalhopacheco/sphinx-fcp",
+    "use_repository_button": True,
+    "use_issues_button": True,
+    "show_nav_level": 2,
+    "navigation_depth": 2,
+    "collapse_navigation": True,
+}
