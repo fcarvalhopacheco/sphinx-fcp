@@ -63,6 +63,11 @@
         <div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="index.html">
       
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="_static/logo_HOT.jpg" class="logo" alt="logo">
       
       
       <h1 class="site-logo" id="site-title">My Sphinx =)</h1>
@@ -140,6 +145,22 @@
 </div>
 
             <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/fcarvalhopacheco/sphinx-fcp"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/fcarvalhopacheco/sphinx-fcp/issues/new?title=Issue%20on%20page%20%2FREADME.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
 
             <!-- Full screen (wrap in <a> to have style consistency -->
 
@@ -237,8 +258,8 @@
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#customizing-your-site">
-   Customizing Your Site
+  <a class="reference internal nav-link" href="#customization">
+   Customization
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
@@ -251,7 +272,17 @@
      Side Bars
     </a>
    </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#add-github-buttons">
+     Add github buttons
+    </a>
+   </li>
   </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#jupyter-notebooks">
+   Jupyter notebooks
+  </a>
  </li>
 </ul>
 
@@ -350,8 +381,8 @@
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#customizing-your-site">
-   Customizing Your Site
+  <a class="reference internal nav-link" href="#customization">
+   Customization
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
@@ -364,7 +395,17 @@
      Side Bars
     </a>
    </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#add-github-buttons">
+     Add github buttons
+    </a>
+   </li>
   </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#jupyter-notebooks">
+   Jupyter notebooks
+  </a>
  </li>
 </ul>
 
@@ -853,11 +894,11 @@ markdown syntax.</p></li>
 <ul class="simple">
 <li><p>The <code class="docutils literal notranslate"><span class="pre">numref</span></code> role is used to reference numbered elements of the documentation, such as tables and images.</p></li>
 </ul>
-<div class="figure align-center" id="kilo-moana">
+<div class="figure align-center" id="kilo-moana-1">
 <a class="reference internal image-reference" href="_images/kilo-moana.jpg"><img alt="_images/kilo-moana.jpg" src="_images/kilo-moana.jpg" style="width: 256.0px; height: 192.0px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 1 </span><span class="caption-text">R/V Kilo Moana</span><a class="headerlink" href="#kilo-moana" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 1 </span><span class="caption-text">R/V Kilo Moana - Test 1</span><a class="headerlink" href="#kilo-moana-1" title="Permalink to this image">¶</a></p>
 </div>
-<p>Now you can start referencing <a class="reference internal" href="#kilo-moana"><span class="std std-numref">Fig. 1</span></a> –&gt; <code class="docutils literal notranslate"><span class="pre">{numref}`kilo-moana`</span></code></p>
+<p>Now you can start referencing <a class="reference internal" href="#kilo-moana-1"><span class="std std-numref">Fig. 1</span></a> –&gt; <code class="docutils literal notranslate"><span class="pre">{numref}`kilo-moana-1`</span></code></p>
 </div>
 <div class="section" id="automatically-label-sections">
 <h4>Automatically Label sections<a class="headerlink" href="#automatically-label-sections" title="Permalink to this headline">¶</a></h4>
@@ -888,8 +929,8 @@ markdown syntax.</p></li>
 </div>
 </div>
 </div>
-<div class="section" id="customizing-your-site">
-<h2>Customizing Your Site<a class="headerlink" href="#customizing-your-site" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="customization">
+<h2>Customization<a class="headerlink" href="#customization" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="simple-customizing">
 <h3>Simple Customizing<a class="headerlink" href="#simple-customizing" title="Permalink to this headline">¶</a></h3>
 <ul>
@@ -903,7 +944,25 @@ markdown syntax.</p></li>
 </div>
 <div class="section" id="side-bars">
 <h3>Side Bars<a class="headerlink" href="#side-bars" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-markdown notranslate"><div class="highlight"><pre><span></span>html_title = &quot;Your title&quot;
+html_logo = &quot;path/to/logo.png&quot;
+html_favicon = &quot;path/to/favicon.ico&quot;
+</pre></div>
 </div>
+</div>
+<div class="section" id="add-github-buttons">
+<h3>Add github buttons<a class="headerlink" href="#add-github-buttons" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">html_theme_options</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;repository_url&quot;</span><span class="p">:</span> <span class="s2">&quot;https://github.com/fcarvalhopacheco/sphinx-fcp&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;use_repository_button&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="s2">&quot;use_issues_button&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="jupyter-notebooks">
+<h2>Jupyter notebooks<a class="headerlink" href="#jupyter-notebooks" title="Permalink to this headline">¶</a></h2>
 </div>
 </div>
 
@@ -934,9 +993,9 @@ markdown syntax.</p></li>
     <footer class="footer">
   <p>
     
-      By Fernando Carvalho Pacheco <fernando.pacheco@hawaii.edu><br/>
+      By Fernando Carvalho Pacheco<br/>
     
-        &copy; Copyright 2022, Fernando Carvalho Pacheco.<br/>
+        &copy; Copyright 2022, Fernando Carvalho Pacheco &lt;fernando.pacheco@hawaii.edu&gt;.<br/>
   </p>
 </footer>
 </main>

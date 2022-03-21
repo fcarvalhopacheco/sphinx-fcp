@@ -62,6 +62,11 @@
         <div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="index.html">
       
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="_static/logo_HOT.jpg" class="logo" alt="logo">
       
       
       <h1 class="site-logo" id="site-title">My Sphinx =)</h1>
@@ -139,6 +144,22 @@
 </div>
 
             <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/fcarvalhopacheco/sphinx-fcp"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/fcarvalhopacheco/sphinx-fcp/issues/new?title=Issue%20on%20page%20%2Fmarkdown_tips.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
 
             <!-- Full screen (wrap in <a> to have style consistency -->
 
@@ -664,7 +685,7 @@ Testing this seealso.
 <div class="admonition important">
 <p class="admonition-title">Important</p>
 <p>-Make sure to activate <code class="docutils literal notranslate"><span class="pre">sphinx.ext.intersphinx</span></code> on your <code class="docutils literal notranslate"><span class="pre">conf.py</span></code></p>
-<p>-See details here: <span class="xref std std-ref">readme:more cross-referencing</span></p>
+<p>-See details here: <a class="reference internal" href="README.html#setting-up-intersphinx-extension"><span class="std std-ref">Setting up Intersphinx extension</span></a></p>
 </div>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">[](cchdo-website:oxygen)</span></code> -&gt; <a class="reference external" href="https://exchange-format.readthedocs.io/en/latest/parameters.html#oxygen" title="(in Exchange Format v1.2)"><span>OXYGEN</span></a></p></li>
@@ -697,17 +718,17 @@ Testing this seealso.
 <div class="highlight-markdown notranslate"><div class="highlight"><pre><span></span>```{figure} <span class="ge">_build/html/_</span>images/kilo-moana.jpg
 :scale: 40%
 :align: center
-:name: kilo-moana
+:name: kilo-moana-2
 
 R/V Kilo Moana 
 ```
 </pre></div>
 </div>
-<div class="figure align-center" id="kilo-moana">
+<div class="figure align-center" id="kilo-moana-2">
 <a class="reference internal image-reference" href="_images/kilo-moana.jpg"><img alt="_images/kilo-moana.jpg" src="_images/kilo-moana.jpg" style="width: 256.0px; height: 192.0px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 3 </span><span class="caption-text">R/V Kilo Moana</span><a class="headerlink" href="#kilo-moana" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 3 </span><span class="caption-text">R/V Kilo Moana - Test 2</span><a class="headerlink" href="#kilo-moana-2" title="Permalink to this image">¶</a></p>
 </div>
-<p>Now you can start referencing <a class="reference internal" href="README.html#kilo-moana"><span class="std std-numref">Fig. 1</span></a> –&gt; <code class="docutils literal notranslate"><span class="pre">{numref}`kilo-moana`</span></code></p>
+<p>Now you can start referencing <a class="reference internal" href="#kilo-moana-2"><span class="std std-numref">Fig. 3</span></a> –&gt; <code class="docutils literal notranslate"><span class="pre">{numref}`kilo-moana-2`</span></code></p>
 </li>
 </ul>
 </div>
@@ -728,7 +749,7 @@ R/V Kilo Moana
 </pre></div>
 </div>
 </div>
-<p><code class="docutils literal notranslate"> <span class="pre">{ref}</span></code>readme:start here: setup<code class="docutils literal notranslate"> </code> –&gt; <span class="xref std std-ref">readme:start here: setup</span></p>
+<p><code class="docutils literal notranslate"> <span class="pre">{ref}</span></code>readme:setup<code class="docutils literal notranslate"> </code> –&gt; <a class="reference internal" href="README.html#setup"><span class="std std-ref">Setup</span></a></p>
 </li>
 </ul>
 </div>
@@ -756,9 +777,9 @@ R/V Kilo Moana
     <footer class="footer">
   <p>
     
-      By Fernando Carvalho Pacheco <fernando.pacheco@hawaii.edu><br/>
+      By Fernando Carvalho Pacheco<br/>
     
-        &copy; Copyright 2022, Fernando Carvalho Pacheco.<br/>
+        &copy; Copyright 2022, Fernando Carvalho Pacheco &lt;fernando.pacheco@hawaii.edu&gt;.<br/>
   </p>
 </footer>
 </main>

@@ -225,7 +225,7 @@ This is visually nice! Also, it's semantically rich.
 ````{important}
 -Make sure to activate `sphinx.ext.intersphinx` on your `conf.py` 
 
--See details here: {ref}`readme:more cross-referencing`
+-See details here: {ref}`/readme.md#setting-up-intersphinx-extension`
 ````
 
 - ```[](cchdo-website:oxygen)``` -> [](cchdo-website:oxygen)
@@ -254,7 +254,7 @@ This requires setting ``numfig = True`` in your ``conf.py``,
     ```{figure} _build/html/_images/kilo-moana.jpg
     :scale: 40%
     :align: center
-    :name: kilo-moana
+    :name: kilo-moana-2
     
     R/V Kilo Moana 
     ```
@@ -263,12 +263,12 @@ This requires setting ``numfig = True`` in your ``conf.py``,
     ```{figure} _build/html/_images/kilo-moana.jpg
     :scale: 40%
     :align: center
-    :name: kilo-moana
+    :name: kilo-moana-2
 
-    R/V Kilo Moana
+    R/V Kilo Moana - Test 2
     ```
 
-    Now you can start referencing {numref}`kilo-moana` --> ``` {numref}`kilo-moana` ```
+    Now you can start referencing {numref}`kilo-moana-2` --> ``` {numref}`kilo-moana-2` ```
 
 #### Automatically Label sections
 
@@ -288,6 +288,6 @@ This requires setting ``numfig = True`` in your ``conf.py``,
     ```
     ````
     
-    ` {ref}`readme:start here: setup` ` --> {ref}`readme:start here: setup`
+    ` {ref}`readme:setup` ` --> {ref}`readme:setup`
  
  
