@@ -500,3 +500,15 @@ R/V Kilo Moana
 + For example:
 
     ` {ref}`readme:setup` ` --> {ref}`readme:setup`
+
+## Customizing Your Site
+### Simple Customizing
+
++ Open `conf.py`, and set the following:
+
+    ```python 
+    project = 'My Sphinx'
+    html_title = "My Sphinx =)"
+   ```
+
+### Side Bars
