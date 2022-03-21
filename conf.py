@@ -19,10 +19,10 @@ sys.path.insert(0, os.path.abspath('.'))
 
 # -- Project information -----------------------------------------------------
 
-project = 'myfirst-sphinx'
-copyright = f'{datetime.now().year}, Fernando Carvalho Pacheco <fernando.pacheco@hawaii.edu>'
-author = 'Fernando Carvalho Pacheco <fernando.pacheco@hawaii.edu>'
-
+project = "My Sphinx"
+copyright = f'{datetime.now().year}, Fernando Carvalho Pacheco'
+author = "Fernando Carvalho Pacheco <fernando.pacheco@hawaii.edu>"
+html_title = "My Sphinx =)"
 
 # -- General configuration ---------------------------------------------------
 
