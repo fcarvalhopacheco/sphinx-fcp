@@ -5,7 +5,6 @@
 * This is my README.md 
 
 ## Setup 
-
 1. On your terminal, create a new project folder:
 
     ```shell script
@@ -469,12 +468,12 @@ This requires setting ``numfig = True`` in your ``conf.py``,
 ```{figure} _build/html/_images/kilo-moana.jpg
 :scale: 40%
 :align: center
-:name: kilo-moana
+:name: kilo-moana-1
 
-R/V Kilo Moana 
+R/V Kilo Moana - Test 1
 ```
    
-   Now you can start referencing {numref}`kilo-moana` --> ``` {numref}`kilo-moana` ```
+   Now you can start referencing {numref}`kilo-moana-1` --> ``` {numref}`kilo-moana-1` ```
   
 ####  Automatically Label sections
 
@@ -501,7 +500,7 @@ R/V Kilo Moana
 
     ` {ref}`readme:setup` ` --> {ref}`readme:setup`
 
-## Customizing Your Site
+## Customization
 ### Simple Customizing
 
 + Open `conf.py`, and set the following:
@@ -512,3 +511,21 @@ R/V Kilo Moana
    ```
 
 ### Side Bars
+
+```markdown
+html_title = "Your title"
+html_logo = "path/to/logo.png"
+html_favicon = "path/to/favicon.ico"
+```
+
+### Add github buttons
+
+```
+html_theme_options = {
+    "repository_url": "https://github.com/fcarvalhopacheco/sphinx-fcp",
+    "use_repository_button": True,
+    "use_issues_button": True,
+}
+```
+
+## Jupyter notebooks
