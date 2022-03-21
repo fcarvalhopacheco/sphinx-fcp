@@ -1,13 +1,16 @@
-# Test 
+# My First Sphinx
 
-Welcome to my testing.
-
-Add this line to test linking [](markdown_tips.md)
 
 ```{toctree}
 :maxdepth: 2
-:caption: "Contents:"
+:caption: Setup
 
 README
+```
+
+```{toctree}
+:maxdepth: 2
+:caption: Examples
+
 markdown_tips
 ```
