@@ -22,8 +22,6 @@ sys.path.insert(0, os.path.abspath('.'))
 project = "My Sphinx"
 copyright = f'{datetime.now().year}, Fernando Carvalho Pacheco <fernando.pacheco@hawaii.edu>'
 author = "Fernando Carvalho Pacheco"
-html_title = "My Sphinx =)"
-html_logo = "_build/html/_images/logo_HOT.jpg"
 # -- General configuration ---------------------------------------------------
 
 # Add any Sphinx extension module names here, as strings. They can be
@@ -51,6 +49,11 @@ myst_heading_anchors = 3
 # Add numbered roles
 numfig = True
 
+# Enable some MyST extensions.
+myst_enable_extensions = [
+    "colon_fence",
+]
+
 # Make sure the explicity target is unique
 autosectionlabel_prefix_document = True
 autosectionlabel_maxdepth = 3
@@ -63,29 +66,26 @@ templates_path = ['_templates']
 # This pattern also affects html_static_path and html_extra_path.
 exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store', '.env']
 
-
 # -- Options for HTML output -------------------------------------------------
 
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
 #
 html_theme = "sphinx_book_theme"
+html_logo = "_build/html/_images/logo_HOT.jpg"
+html_title = "My Sphinx =)"
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ['_static']
 
-# Enable some MyST extensions.
-myst_enable_extensions = [
-    "colon_fence",
-]
-
 html_theme_options = {
     "repository_url": "https://github.com/fcarvalhopacheco/sphinx-fcp",
     "use_repository_button": True,
     "use_issues_button": True,
-    "show_nav_level": 2,
-    "navigation_depth": 2,
-    "collapse_navigation": True,
+    "home_page_in_toc": False,
+    "show_toc_level": 2,
+    "show_navbar_depth": 1,
 }
+
