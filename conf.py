@@ -23,7 +23,6 @@ project = "My Sphinx"
 copyright = f'{datetime.now().year}, Fernando Carvalho Pacheco <fernando.pacheco@hawaii.edu>'
 author = "Fernando Carvalho Pacheco"
 # -- General configuration ---------------------------------------------------
-
 # Add any Sphinx extension module names here, as strings. They can be
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
@@ -72,7 +71,7 @@ exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store', '.env']
 # a list of builtin themes.
 #
 html_theme = "sphinx_book_theme"
-html_logo = "_build/html/_images/logo_HOT.jpg"
+html_logo = "build/html/_images/whots_logo.jpg"
 html_title = "My Sphinx =)"
 
 # Add any paths that contain custom static files (such as style sheets) here,
@@ -85,7 +84,5 @@ html_theme_options = {
     "use_repository_button": True,
     "use_issues_button": True,
     "home_page_in_toc": False,
-    "show_toc_level": 2,
-    "show_navbar_depth": 1,
 }
 
