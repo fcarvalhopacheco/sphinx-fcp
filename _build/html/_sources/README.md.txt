@@ -2,6 +2,7 @@
 
 [Reference: talkpython](https://training.talkpython.fm/courses/details/static-sites-with-sphinx-and-markdown)
 [Project infrastructure](#https://docs.jupyter.org/es/latest/contributing/docs-contributions/repo-structure.html)
+
 * This is my README.md 
 
 ## Setup 
@@ -22,7 +23,7 @@
     ````shell script
     conda create --prefix ./.env python=3.10 ipython=8.1.1 sphinx=4.4.0 sphinx-autobuild=2021.3.14 myst-parser=0.17.0
     sphinx-autodoc-typehints=1.12.0 nbsphinx=0.8.8 sphinx-book-theme=0.2.0 sphinx-design=0.0.13 jupyterlab=3.3.3
-````
+    ````
     
     ```{seealso}
     For more information about the packages, please check: 
@@ -529,4 +530,3 @@ html_theme_options = {
 }
 ```
 
-## Jupyter notebooks
