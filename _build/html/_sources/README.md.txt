@@ -1,7 +1,7 @@
 # Sphinx Tutorial
 
 [Reference: talkpython](https://training.talkpython.fm/courses/details/static-sites-with-sphinx-and-markdown)
-
+[Project infrastructure](#https://docs.jupyter.org/es/latest/contributing/docs-contributions/repo-structure.html)
 * This is my README.md 
 
 ## Setup 
@@ -19,9 +19,10 @@
     
     (conda/create)=
     
-    ```shell script
-    conda create --prefix ./.env python=3.10 ipython=8.1.1 sphinx=4.4.0 sphinx-autobuild=2021.3.14 myst-parser=0.17.0 sphinx-autodoc-typehints=1.12.0 nbsphinx=0.8.8 sphinx-book-theme=0.2.0
-    ````
+    ````shell script
+    conda create --prefix ./.env python=3.10 ipython=8.1.1 sphinx=4.4.0 sphinx-autobuild=2021.3.14 myst-parser=0.17.0
+    sphinx-autodoc-typehints=1.12.0 nbsphinx=0.8.8 sphinx-book-theme=0.2.0 sphinx-design=0.0.13 jupyterlab=3.3.3
+````
     
     ```{seealso}
     For more information about the packages, please check: 
@@ -277,7 +278,7 @@
 2. Download the image locally:
     
     ```shell script
-    curl https://datadocs.bco-dmo.org/d2/images/logos/logo_HOT.jpg > _build/hmtl/_images/logo_HOT.jpg 
+    curl https://datadocs.bco-dmo.org/d2/images/logos/logo_HOT.jpg > _build/html/_images/logo_HOT.jpg 
     ```
     
 3. Edit and display:
@@ -465,15 +466,15 @@ This requires setting ``numfig = True`` in your ``conf.py``,
 
 + The `numref` role is used to reference numbered elements of the documentation, such as tables and images.
 
-```{figure} _build/html/_images/kilo-moana.jpg
+```{figure} _build/html/_images/kilo-moana.jpg 
 :scale: 40%
 :align: center
-:name: kilo-moana-1
+:name: kilo-moana-4
 
-R/V Kilo Moana - Test 1
+R/V Kilo Moana - Test 4
 ```
    
-   Now you can start referencing {numref}`kilo-moana-1` --> ``` {numref}`kilo-moana-1` ```
+   Now you can start referencing {numref}`kilo-moana-4` --> ``` {numref}`kilo-moana-4` ```
   
 ####  Automatically Label sections
 

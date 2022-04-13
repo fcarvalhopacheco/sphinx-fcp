@@ -235,7 +235,7 @@ This is visually nice! Also, it's semantically rich.
 #### Implicit Targets
 
 ````{important}
-This requires setting ``myst_heading_anchors = 2`` in your ``conf.py``,
+This requires setting ``myst_heading_anchors = 3`` in your ``conf.py``,
 ```{seealso}
 [Auto-generated header anchors](https://myst-parser.readthedocs.io/en/v0.15.1/syntax/optional.html#auto-generated-header-anchors).
 ```
